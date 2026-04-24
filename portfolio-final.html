@@ -887,7 +887,7 @@ function dlResume(e){
   const blob=new Blob([ab],{type:'application/pdf'});
   const url=URL.createObjectURL(blob);
   const a=document.createElement('a');
-  a.href=url;a.download='AyushPatwa_Resume.pdf';
+  a.href=url;a.download='Ayush_resume (1).pdf';
   document.body.appendChild(a);a.click();
   document.body.removeChild(a);URL.revokeObjectURL(url);
 }
