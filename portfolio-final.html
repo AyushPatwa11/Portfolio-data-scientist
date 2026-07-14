@@ -880,16 +880,14 @@ const RESUME_PDF_B64 = 'JVBERi0xLjUKJb/3ov4KMyAwIG9iago8PCAvTGluZWFyaXplZCAxIC9M
 
 function dlResume(e){
   if(e) e.preventDefault();
-  const byteStr=atob(RESUME_PDF_B64);
-  const ab=new ArrayBuffer(byteStr.length);
-  const ia=new Uint8Array(ab);
-  for(let i=0;i<byteStr.length;i++) ia[i]=byteStr.charCodeAt(i);
-  const blob=new Blob([ab],{type:'application/pdf'});
-  const url=URL.createObjectURL(blob);
+  const resumeUrl = new URL('Ayush_resume.pdf', window.location.href);
+  resumeUrl.searchParams.set('v', String(Date.now()));
   const a=document.createElement('a');
-  a.href=url;a.download='Ayush_resume (1).pdf';
-  document.body.appendChild(a);a.click();
-  document.body.removeChild(a);URL.revokeObjectURL(url);
+  a.href=resumeUrl.toString();
+  a.download='Ayush_resume.pdf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
 /* THEME */
