@@ -5,10 +5,13 @@ import { Journey } from '@/components/sections/journey';
 import { Projects } from '@/components/sections/projects';
 import { Skills } from '@/components/sections/skills';
 import { LearningDashboard } from '@/components/sections/learning';
+import { ExperienceSection } from '@/components/sections/experience';
+import { CertificatesSection } from '@/components/sections/certificates';
+import { AchievementsSection } from '@/components/sections/achievements';
 
 /**
  * Root Landing Page.
- * Renders page sections sequentially matching recruiter scroll layout.
+ * Renders page sections sequentially matching recruiter scroll layouts.
  */
 export default function Home() {
   return (
@@ -21,6 +24,9 @@ export default function Home() {
         <Projects />
         <Skills />
         <LearningDashboard />
+        <ExperienceSection />
+        <CertificatesSection />
+        <AchievementsSection />
       </main>
     </div>
   );

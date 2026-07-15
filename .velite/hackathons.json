@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "title": "Hackathon Name (e.g. HackMumbai 2026)",
+    "role": "Role (e.g. Lead ML Builder)",
+    "projectBuilt": "Title of project built",
+    "result": "Placement or Award (e.g. Top 10 Finalist)",
+    "devpostUrl": "https://devpost.com/software/project-slug",
+    "impact": "Brief description of the project and its core impact metrics."
+  }
+]
