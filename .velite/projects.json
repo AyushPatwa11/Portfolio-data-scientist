@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "project-template",
+    "title": "Project Title",
+    "description": "A concise 1-2 sentence description of the project and its core impact/purpose.",
+    "featured": false,
+    "status": "completed",
+    "category": "Machine Learning",
+    "difficulty": "Intermediate",
+    "techStack": [
+      "Python",
+      "SQL"
+    ],
+    "github": "https://github.com/AyushPatwa11/repo-name",
+    "demo": "https://project-demo.com",
+    "thumbnail": "/images/projects/template-thumb.webp",
+    "publishedAt": "2026-07-15",
+    "updatedAt": "2026-07-15",
+    "order": 0,
+    "caseStudy": {
+      "problem": "Describe the core issue or bottleneck this project aims to solve. What was the status quo, and why was it problematic?",
+      "solution": "Outline your approach. What model or architecture did you build? How does it solve the problem defined above?",
+      "challenges": "Detail the core technical challenges or failures you encountered during development. How did you troubleshoot and resolve them?",
+      "learnings": "What did you learn from building this? Focus on algorithmic insights, performance optimization, or pipeline mechanics.",
+      "futureImprovements": "List next steps or scaling paths. What features, models, or infrastructure changes would you make in the next iteration?"
+    },
+    "content": "const{jsx:t}=arguments[0];function _createMdxContent(n){const e={p:\"p\",...n.components};return t(e.p,{children:\"This is the content body of the project case study, written in MDX format.\"})}return{default:function(n={}){const{wrapper:e}=n.components||{};return e?t(e,{...n,children:t(_createMdxContent,{...n})}):_createMdxContent(n)}};"
+  }
+]

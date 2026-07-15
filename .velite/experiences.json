@@ -1,0 +1,39 @@
+[
+  {
+    "company": "Organization or Company Name",
+    "role": "Title (e.g. Software Intern, Lead Developer)",
+    "startDate": "Month Year",
+    "endDate": "Month Year or Present",
+    "location": "City, Country or Remote",
+    "bullets": [
+      "High-impact action statement describing your contribution (e.g. Optimized SQL queries...).",
+      "Technical implementation details (e.g. Deployed model loops...).",
+      "Team or collaborative metrics."
+    ],
+    "skillsUsed": [
+      "Python",
+      "SQL",
+      "Git"
+    ],
+    "isClubLeadership": false
+  },
+  {
+    "company": "University Coding Club",
+    "role": "Technical Coordinator",
+    "startDate": "July 2024",
+    "endDate": "Present",
+    "location": "Mumbai, India",
+    "bullets": [
+      "Organized workshops on Python basics, database configurations, and dynamic algorithms, tutoring 80+ student peers.",
+      "Led development of the club's mock hackathon registration databases, optimizing SQL query latency.",
+      "Collaborated with designers and frontend builders to deliver clean web platforms under brief sprints."
+    ],
+    "skillsUsed": [
+      "Python",
+      "SQL",
+      "Git",
+      "GitHub"
+    ],
+    "isClubLeadership": true
+  }
+]

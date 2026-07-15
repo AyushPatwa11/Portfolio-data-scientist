@@ -1,0 +1,8 @@
+{
+  "_comment": "INSTRUCTIONS: Copy this file to add a currently active study topic, course, or book.",
+  "category": "ML COURSE",
+  "title": "Title of the course, book, or sprint",
+  "progress": "Optional progress (e.g. 85%, Chapter 3)",
+  "status": "In Progress",
+  "order": 1
+}

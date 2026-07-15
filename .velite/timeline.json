@@ -1,0 +1,37 @@
+[
+  {
+    "year": "2023",
+    "title": "B.Tech CSE Enrollment",
+    "description": "Began Computer Science Engineering studies. Focused on software foundations, logic design, and discrete mathematics.",
+    "category": "Academic",
+    "order": 1
+  },
+  {
+    "year": "2024",
+    "title": "DSA & Java Foundations",
+    "description": "Mastered Object-Oriented Programming principles in Java. Studied core data structures and algorithms (trees, dynamic programming).",
+    "category": "Engineering",
+    "order": 2
+  },
+  {
+    "year": "2025",
+    "title": "Transition to Python & Data Science",
+    "description": "Began self-studying data analysis pipelines. Learned SQL database constraints, data cleaning, and statistical libraries (Pandas, NumPy).",
+    "category": "Data Science",
+    "order": 3
+  },
+  {
+    "year": "2026",
+    "title": "Machine Learning Focus",
+    "description": "Focuse on building model pipelines. Implementing statistical learning methods and model validations (Scikit-Learn, PyTorch basics).",
+    "category": "AI/ML",
+    "order": 4
+  },
+  {
+    "year": "2026",
+    "title": "Milestone Title",
+    "description": "Short explanation of the achievement, study course, or leadership transition.",
+    "category": "Academic",
+    "order": 1
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "category": "ML COURSE",
+    "title": "Deep Learning Specialization (DeepLearning.AI)",
+    "progress": "85%",
+    "status": "In Progress",
+    "order": 1
+  },
+  {
+    "category": "DSA TOPIC",
+    "title": "Dynamic Programming & Graph Algorithms",
+    "status": "Active Focus",
+    "order": 2
+  },
+  {
+    "category": "ACTIVE BOOK",
+    "title": "Designing Data-Intensive Applications by Martin Kleppmann",
+    "progress": "Chapter 8",
+    "status": "In Progress",
+    "order": 3
+  },
+  {
+    "category": "DAILY SPRINT",
+    "title": "Building custom PyTorch validation loops and spatial predictions",
+    "status": "Active Focus",
+    "order": 4
+  },
+  {
+    "category": "ML COURSE",
+    "title": "Title of the course, book, or sprint",
+    "progress": "Optional progress (e.g. 85%, Chapter 3)",
+    "status": "In Progress",
+    "order": 1
+  }
+]

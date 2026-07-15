@@ -1,0 +1,16 @@
+import { MetadataRoute } from 'next';
+import { siteConfig } from '@/config/site';
+
+/**
+ * Generates robots.txt rules dynamically.
+ */
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: '/private/',
+    },
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+  };
+}

@@ -1,0 +1,7 @@
+{
+  "_comment": "INSTRUCTIONS: Copy this file to add a verified certificate. Fields match Zod schema validation.",
+  "title": "Certificate / Course Title",
+  "issuer": "Issuing Organization (e.g. Coursera, DeepLearning.AI)",
+  "issueDate": "Month Year (e.g. July 2026)",
+  "verifyUrl": "https://credentials-verification-link.org"
+}

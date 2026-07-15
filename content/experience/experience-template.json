@@ -1,0 +1,15 @@
+{
+  "_comment": "INSTRUCTIONS: Copy this file to document an internship, club position, or project role.",
+  "company": "Organization or Company Name",
+  "role": "Title (e.g. Software Intern, Lead Developer)",
+  "startDate": "Month Year",
+  "endDate": "Month Year or Present",
+  "location": "City, Country or Remote",
+  "bullets": [
+    "High-impact action statement describing your contribution (e.g. Optimized SQL queries...).",
+    "Technical implementation details (e.g. Deployed model loops...).",
+    "Team or collaborative metrics."
+  ],
+  "skillsUsed": ["Python", "SQL", "Git"],
+  "isClubLeadership": false
+}
