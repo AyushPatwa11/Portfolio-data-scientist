@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Github, ExternalLink, ArrowLeft, ArrowRight, ShieldAlert } from 'lucide-react';
 import { getProjectBySlug, getAdjacentProjects, getSortedProjects } from '@/lib/content';
 import { Navbar } from '@/components/layout/navbar';
+import { Footer } from '@/components/layout/footer';
 import { siteConfig } from '@/config/site';
 
 interface PageProps {
@@ -264,6 +265,7 @@ export default async function ProjectPage({ params }: PageProps) {
           )}
         </footer>
       </main>
+      <Footer />
     </div>
   );
 }

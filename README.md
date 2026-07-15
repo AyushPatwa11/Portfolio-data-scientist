@@ -107,8 +107,41 @@ _The compiled export directory will be generated under `/out`._
 
 Since the project builds as a completely static site (via `output: 'export'` target in `next.config.ts`), it can be hosted on **Vercel**, **GitHub Pages**, **Netlify**, or **Cloudflare Pages**.
 
-### Vercel Deployment (Recommended)
-
 1. Import the repository on Vercel.
 2. In Project Settings, ensure the Build Command is `npm run build` and Output Directory is `out`.
 3. Deploy.
+
+---
+
+## 🎨 Screenshots & Mockups
+
+Here are placeholders for visual mockups representing the responsive viewports of the V1 portfolio platform:
+
+- **Desktop Viewport**: `![Landing Page Desktop Mockup](./public/images/mockups/desktop-preview.png)`
+- **Mobile Viewport**: `![Landing Page Mobile Mockup](./public/images/mockups/mobile-preview.png)`
+
+---
+
+## 🔧 Customization Guide
+
+### 1. Modifying SEO Metadata
+
+Global meta attributes, Twitter templates, and OpenGraph variables are controlled in `src/config/seo.ts`. Update the values inside `seoConfig` to change global page descriptions and search engine crawlers behaviors.
+
+### 2. Modifying Social Navigation Handles
+
+Profile handle identifiers and mail links are managed inside `src/config/social.ts` and `src/config/site.ts`.
+
+---
+
+## 🗺️ Future Roadmap
+
+- [ ] Integrate live Web3Forms endpoint for production contact submissions.
+- [ ] Implement Vercel Speed Insights for real-time LCP monitoring.
+- [ ] Add dynamic dark-mode transition sound indicators (soft hum toggle).
+
+---
+
+## 📄 License
+
+This personal portfolio code is licensed under the **MIT License**. Feel free to use, modify, and distribute it.

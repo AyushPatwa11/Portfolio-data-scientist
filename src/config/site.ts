@@ -24,6 +24,7 @@ export const siteConfig = {
   resumePath: '/resume/resume.pdf',
   resumeVersion: 'v1.2.0',
   resumeLastUpdated: 'July 2026',
+  contactFormEndpoint: process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT || '',
   githubFallbackRepos: [
     {
       name: 'Portfolio-data-scientist',

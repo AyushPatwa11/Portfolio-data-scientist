@@ -1,0 +1,36 @@
+name: Portfolio Verification pipeline
+
+on:
+  push:
+    branches: [ main, add-portfolio-files ]
+  pull_request:
+    branches: [ main, add-portfolio-files ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Prettier Style Checks
+        run: npx prettier --check "src/**/*.{ts,tsx,css}" "content/**/*.json"
+
+      - name: Run Eslint checks
+        run: npm run lint
+
+      - name: Run TypeScript compiler diagnostics
+        run: npx tsc --noEmit
+
+      - name: Run Production compilation build
+        run: npm run build

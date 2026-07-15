@@ -10,6 +10,8 @@ import { CertificatesSection } from '@/components/sections/certificates';
 import { AchievementsSection } from '@/components/sections/achievements';
 import { GithubSection } from '@/components/sections/github';
 import { ResumeSection } from '@/components/sections/resume';
+import { ContactSection } from '@/components/sections/contact';
+import { Footer } from '@/components/layout/footer';
 
 /**
  * Root Landing Page.
@@ -31,7 +33,9 @@ export default function Home() {
         <AchievementsSection />
         <GithubSection />
         <ResumeSection />
+        <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 }
