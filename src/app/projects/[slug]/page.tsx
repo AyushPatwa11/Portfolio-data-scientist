@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Github, ExternalLink, ArrowLeft, ArrowRight, ShieldAlert } from 'lucide-react';
 import { getProjectBySlug, getAdjacentProjects, getSortedProjects } from '@/lib/content';
 import { Navbar } from '@/components/layout/navbar';
+import { siteConfig } from '@/config/site';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -32,13 +33,26 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const ogImage = project.thumbnail || `${siteConfig.url}/og/og.jpg`;
+
   return {
     title: `${project.title} | Ayush Patwa Case Study`,
     description: project.description,
+    alternates: {
+      canonical: `${siteConfig.url}/projects/${project.slug}`,
+    },
     openGraph: {
       title: project.title,
       description: project.description,
       type: 'article',
+      url: `${siteConfig.url}/projects/${project.slug}`,
+      images: [{ url: ogImage }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.description,
+      images: [ogImage],
     },
   };
 }
@@ -59,8 +73,25 @@ export default async function ProjectPage({ params }: PageProps) {
   const { prev, next } = getAdjacentProjects(slug);
   const caseStudy = project.caseStudy;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareSourceCode',
+    name: project.title,
+    description: project.description,
+    codeRepository: project.github,
+    programmingLanguage: project.techStack,
+    author: {
+      '@type': 'Person',
+      name: siteConfig.name,
+    },
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-text-primary">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
 
       <main className="flex-grow w-full max-w-4xl mx-auto px-4 md:px-8 py-12">
@@ -132,18 +163,14 @@ export default async function ProjectPage({ params }: PageProps) {
                 <h2 className="font-display text-sm font-bold uppercase tracking-wider text-accent">
                   01 // The Problem Statement
                 </h2>
-                <p className="text-xs text-text-secondary leading-relaxed">
-                  {caseStudy.problem}
-                </p>
+                <p className="text-xs text-text-secondary leading-relaxed">{caseStudy.problem}</p>
               </section>
 
               <section className="border border-border-custom bg-surface p-6 rounded-md hover:border-accent/20 transition-all space-y-3">
                 <h2 className="font-display text-sm font-bold uppercase tracking-wider text-accent">
                   02 // The Technical Approach
                 </h2>
-                <p className="text-xs text-text-secondary leading-relaxed">
-                  {caseStudy.solution}
-                </p>
+                <p className="text-xs text-text-secondary leading-relaxed">{caseStudy.solution}</p>
               </section>
             </div>
 
@@ -162,9 +189,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 <h2 className="font-display text-sm font-bold uppercase tracking-wider text-accent">
                   04 // Engineering Insights & Learnings
                 </h2>
-                <p className="text-xs text-text-secondary leading-relaxed">
-                  {caseStudy.learnings}
-                </p>
+                <p className="text-xs text-text-secondary leading-relaxed">{caseStudy.learnings}</p>
               </section>
             </div>
 
@@ -185,7 +210,9 @@ export default async function ProjectPage({ params }: PageProps) {
             <div>
               <h3 className="text-xs font-mono font-bold uppercase">Case Study Pending</h3>
               <p className="text-2xs mt-1 leading-relaxed text-text-secondary">
-                This project metadata has loaded successfully, but the structured engineering write-up details are still being compiled. Explore the source repository directly above.
+                This project metadata has loaded successfully, but the structured engineering
+                write-up details are still being compiled. Explore the source repository directly
+                above.
               </p>
             </div>
           </div>
@@ -220,9 +247,7 @@ export default async function ProjectPage({ params }: PageProps) {
               <span>PREV_PROJECT</span>
             </Link>
           ) : (
-            <span className="text-2xs font-mono text-border-custom select-none">
-              FIRST_PROJECT
-            </span>
+            <span className="text-2xs font-mono text-border-custom select-none">FIRST_PROJECT</span>
           )}
 
           {next ? (
@@ -235,9 +260,7 @@ export default async function ProjectPage({ params }: PageProps) {
               <ArrowRight size={14} />
             </Link>
           ) : (
-            <span className="text-2xs font-mono text-border-custom select-none">
-              LAST_PROJECT
-            </span>
+            <span className="text-2xs font-mono text-border-custom select-none">LAST_PROJECT</span>
           )}
         </footer>
       </main>

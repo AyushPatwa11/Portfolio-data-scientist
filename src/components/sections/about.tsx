@@ -1,10 +1,9 @@
 'use client';
 
-import * as React from 'react';
 import { Compass, Activity, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
-import { transitionEase } from '@/lib/animation';
+import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 /**
@@ -39,10 +38,7 @@ export function About() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Left Large Bento Card: Philosophy Bio */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={isReducedMotion ? { duration: 0 } : transitionEase}
+            {...getFadeInUpProps(isReducedMotion)}
             className="md:col-span-8 border border-border-custom bg-surface p-6 md:p-8 rounded-md flex flex-col justify-between hover:border-accent/40 transition-colors"
           >
             <div className="space-y-6">
@@ -53,22 +49,26 @@ export function About() {
                 </span>
               </div>
               <p className="font-display text-lg sm:text-xl font-medium text-text-primary leading-relaxed">
-                Fusing algorithmic software engineering with rigorous mathematical model design.
-                I build clean data pipelines and machine learning models, bridging the gap between
-                raw data and deployable intelligence.
+                Fusing algorithmic software engineering with rigorous mathematical model design. I
+                build clean data pipelines and machine learning models, bridging the gap between raw
+                data and deployable intelligence.
               </p>
               <p className="text-sm text-text-secondary leading-relaxed">
                 As a Computer Science student, I believe that data science is not just about running
-                library imports. It is about understanding the underlying mathematics, handling datasets
-                diligently, and deploying code that works reliably in production. I spend my time
-                optimizing SQL queries, building validation loops, and studying system architectures.
+                library imports. It is about understanding the underlying mathematics, handling
+                datasets diligently, and deploying code that works reliably in production. I spend
+                my time optimizing SQL queries, building validation loops, and studying system
+                architectures.
               </p>
             </div>
 
             {/* Bounding info stamp */}
             <div className="mt-8 pt-4 border-t border-border-custom flex justify-between items-center text-text-secondary font-mono text-[9px]">
               <span>AYUSH_PATWA // B.TECH_CSE_3RD_YEAR</span>
-              <span>SITE_STATUS: DEVELOPMENT_BUILD</span>
+              <span>
+                SITE_STATUS:{' '}
+                {process.env.NODE_ENV === 'production' ? 'PRODUCTION_RELEASE' : 'DEVELOPMENT_BUILD'}
+              </span>
             </div>
           </motion.div>
 
@@ -76,10 +76,7 @@ export function About() {
           <div className="md:col-span-4 flex flex-col gap-6">
             {/* Status Card */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={isReducedMotion ? { duration: 0 } : transitionEase}
+              {...getFadeInUpProps(isReducedMotion)}
               className="border border-border-custom bg-surface p-6 rounded-md flex-1 flex flex-col justify-between hover:border-accent/40 transition-colors"
             >
               <div className="flex items-center justify-between text-text-secondary font-mono text-2xs uppercase tracking-wider">
@@ -94,9 +91,7 @@ export function About() {
                   <p className="text-2xs font-mono text-text-secondary uppercase tracking-widest">
                     Course Focus
                   </p>
-                  <p className="text-base font-bold text-text-primary">
-                    Algorithms, Databases, ML
-                  </p>
+                  <p className="text-base font-bold text-text-primary">Algorithms, Databases, ML</p>
                 </div>
                 <div>
                   <p className="text-2xs font-mono text-text-secondary uppercase tracking-widest">
@@ -113,10 +108,7 @@ export function About() {
 
             {/* Location Card */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={isReducedMotion ? { duration: 0 } : transitionEase}
+              {...getFadeInUpProps(isReducedMotion)}
               className="border border-border-custom bg-surface p-6 rounded-md flex flex-col justify-between hover:border-accent/40 transition-colors"
             >
               <div className="flex items-center justify-between text-text-secondary font-mono text-2xs uppercase tracking-wider">

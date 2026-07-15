@@ -36,6 +36,11 @@ export const seoConfig = {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
+    creator: '@AyushPatwa',
+    site: '@AyushPatwa',
+  },
+  alternates: {
+    canonical: siteConfig.url,
   },
   robots: {
     index: true,

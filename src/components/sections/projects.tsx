@@ -1,12 +1,11 @@
 'use client';
 
-import * as React from 'react';
 import Link from 'next/link';
 import { Github, ExternalLink, BookOpen, Inbox } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getFeaturedProjects } from '@/lib/content';
 import { siteConfig } from '@/config/site';
-import { transitionEase } from '@/lib/animation';
+import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 /**
@@ -47,7 +46,7 @@ export function Projects() {
                 href="https://github.com/AyushPatwa11"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-xs font-mono text-text-secondary hover:text-text-primary"
+                className="inline-flex items-center space-x-2 text-xs font-mono text-text-secondary hover:text-text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded"
                 aria-label="View all repositories on GitHub"
               >
                 <Github size={14} />
@@ -61,10 +60,7 @@ export function Projects() {
         {featuredProjects.length === 0 ? (
           /* Recruiter-friendly Empty State */
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={isReducedMotion ? { duration: 0 } : transitionEase}
+            {...getFadeInUpProps(isReducedMotion)}
             className="border border-border-custom bg-surface p-8 md:p-12 rounded-md text-center max-w-xl mx-auto flex flex-col items-center space-y-4"
           >
             <div className="w-12 h-12 rounded-full border border-border-custom flex items-center justify-center text-text-secondary bg-background/50">
@@ -74,10 +70,11 @@ export function Projects() {
               Case Studies Incoming
             </h3>
             <p className="text-xs text-text-secondary leading-relaxed max-w-sm">
-              Detailed reviews of ML pipeline models and data visualizations are currently in preparation.
-              In the meantime, you can explore my active code repositories directly on GitHub.
+              Detailed reviews of ML pipeline models and data visualizations are currently in
+              preparation. In the meantime, you can explore my active code repositories directly on
+              GitHub.
             </p>
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full justify-center">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full justify-center animate-none">
               <a
                 href={siteConfig.links.github}
                 target="_blank"
@@ -87,9 +84,6 @@ export function Projects() {
                 <Github size={14} />
                 <span>Explore GitHub</span>
               </a>
-              <p className="text-[10px] font-mono text-text-secondary sm:text-left text-center">
-                * Copy <code className="bg-background px-1 py-0.5 rounded text-accent">project-template.mdx</code> to post case studies.
-              </p>
             </div>
           </motion.div>
         ) : (
@@ -98,10 +92,7 @@ export function Projects() {
             {featuredProjects.map((project) => (
               <motion.article
                 key={project.slug}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={isReducedMotion ? { duration: 0 } : transitionEase}
+                {...getFadeInUpProps(isReducedMotion)}
                 className="group border border-border-custom bg-surface rounded-md overflow-hidden flex flex-col justify-between hover:border-accent/40 transition-colors"
               >
                 {/* Visual Thumbnail Frame */}
@@ -163,6 +154,7 @@ export function Projects() {
                   <Link
                     href={`/projects/${project.slug}`}
                     className="flex items-center space-x-1.5 text-xs font-mono font-bold text-text-primary hover:text-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+                    aria-label={`Read case study for ${project.title}`}
                   >
                     <BookOpen size={14} />
                     <span>CASE STUDY</span>

@@ -1,10 +1,9 @@
 'use client';
 
-import * as React from 'react';
 import { Trophy, Code2, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getHackathons } from '@/lib/content';
-import { transitionEase } from '@/lib/animation';
+import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 /**
@@ -14,20 +13,7 @@ import { useReducedMotion } from '@/hooks/use-reduced-motion';
  */
 export function AchievementsSection() {
   const isReducedMotion = useReducedMotion();
-
-  // Load and filter out templates
-  const achievements = React.useMemo(() => {
-    try {
-      return getHackathons().filter(
-        (hack) =>
-          !hack.title.toLowerCase().includes('template') &&
-          !hack.title.toLowerCase().includes('hackathon name'),
-      );
-    } catch (e) {
-      console.error('Failed to load achievements', e);
-      return [];
-    }
-  }, []);
+  const achievements = getHackathons();
 
   // Hide section entirely if empty
   if (achievements.length === 0) {
@@ -59,10 +45,7 @@ export function AchievementsSection() {
           {achievements.map((ach) => (
             <motion.div
               key={ach.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={isReducedMotion ? { duration: 0 } : transitionEase}
+              {...getFadeInUpProps(isReducedMotion)}
               className="border border-border-custom bg-surface p-6 rounded-md hover:border-accent/40 transition-colors flex flex-col justify-between"
             >
               <div className="space-y-4">

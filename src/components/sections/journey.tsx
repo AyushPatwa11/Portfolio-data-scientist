@@ -1,9 +1,8 @@
 'use client';
 
-import * as React from 'react';
 import { motion } from 'framer-motion';
 import { getSortedTimeline } from '@/lib/content';
-import { transitionEase } from '@/lib/animation';
+import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 /**
@@ -47,10 +46,7 @@ export function Journey() {
               return (
                 <motion.div
                   key={milestone.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-100px' }}
-                  transition={isReducedMotion ? { duration: 0 } : transitionEase}
+                  {...getFadeInUpProps(isReducedMotion)}
                   className={`relative flex flex-col sm:flex-row items-start ${
                     isEven ? 'sm:flex-row-reverse' : ''
                   }`}
@@ -64,7 +60,9 @@ export function Journey() {
                   </div>
 
                   {/* Left / Right Card wrapper */}
-                  <div className={`w-full sm:w-1/2 pl-10 sm:pl-0 ${isEven ? 'sm:pl-8' : 'sm:pr-8'}`}>
+                  <div
+                    className={`w-full sm:w-1/2 pl-10 sm:pl-0 ${isEven ? 'sm:pl-8' : 'sm:pr-8'}`}
+                  >
                     <div className="border border-border-custom bg-surface p-6 rounded-md hover:border-accent/40 transition-colors">
                       <div className="flex items-center justify-between mb-3">
                         <span className="font-mono text-xs font-bold text-accent tracking-wider">

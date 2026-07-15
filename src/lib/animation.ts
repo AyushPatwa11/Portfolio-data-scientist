@@ -1,12 +1,9 @@
-/**
- * Centralized Framer Motion Transition Presets.
- * Aligns animation behavior across the application.
- */
+import { themeConfig } from '@/config/theme';
 
 export const transitionSpring = {
   type: 'spring' as const,
-  stiffness: 300,
-  damping: 30,
+  stiffness: themeConfig.animation.stiffness,
+  damping: themeConfig.animation.damping,
 };
 
 export const transitionEase = {
@@ -37,3 +34,22 @@ export const staggerContainerVariants = {
     },
   },
 };
+
+// Common viewport configuration preset
+export const viewportPreset = {
+  once: true,
+  margin: '-100px' as const,
+};
+
+/**
+ * Returns consistent scroll reveal props for standard fade-in-up animations.
+ * Eliminates boilerplate repetition across layout components.
+ */
+export function getFadeInUpProps(isReducedMotion: boolean) {
+  return {
+    initial: { opacity: 0, y: 15 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: viewportPreset,
+    transition: isReducedMotion ? { duration: 0 } : transitionEase,
+  };
+}

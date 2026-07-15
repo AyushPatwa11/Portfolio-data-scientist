@@ -23,7 +23,7 @@
   {
     "year": "2026",
     "title": "Machine Learning Focus",
-    "description": "Focuse on building model pipelines. Implementing statistical learning methods and model validations (Scikit-Learn, PyTorch basics).",
+    "description": "Focus on building model pipelines. Implementing statistical learning methods and model validations (Scikit-Learn, PyTorch basics).",
     "category": "AI/ML",
     "order": 4
   },

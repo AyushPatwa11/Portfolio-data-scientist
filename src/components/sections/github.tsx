@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Github, FolderGit, Star, Calendar, Code, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
-import { transitionEase } from '@/lib/animation';
+import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 interface RepoData {
@@ -129,10 +129,7 @@ export function GithubSection() {
             {repos.map((repo) => (
               <motion.article
                 key={repo.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={isReducedMotion ? { duration: 0 } : transitionEase}
+                {...getFadeInUpProps(isReducedMotion)}
                 className={`border p-6 rounded-md bg-surface flex flex-col justify-between hover:border-accent/40 transition-colors ${
                   repo.isPinned ? 'border-accent/20' : 'border-border-custom'
                 }`}

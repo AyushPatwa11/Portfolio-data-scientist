@@ -1,11 +1,18 @@
 'use client';
 
-import * as React from 'react';
 import { BookOpen, Award, Flame, Library, HelpCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getSortedLearning } from '@/lib/content';
-import { transitionEase } from '@/lib/animation';
+import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
+
+// Lookup map mapping learning categories to React components
+const CATEGORY_ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  'ML COURSE': Award,
+  'DSA TOPIC': Flame,
+  'ACTIVE BOOK': Library,
+  'DAILY SPRINT': BookOpen,
+};
 
 /**
  * Current Learning Dashboard Component.
@@ -15,22 +22,6 @@ import { useReducedMotion } from '@/hooks/use-reduced-motion';
 export function LearningDashboard() {
   const isReducedMotion = useReducedMotion();
   const learningItems = getSortedLearning();
-
-  // Map categories to standard icons
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'ML COURSE':
-        return Award;
-      case 'DSA TOPIC':
-        return Flame;
-      case 'ACTIVE BOOK':
-        return Library;
-      case 'DAILY SPRINT':
-        return BookOpen;
-      default:
-        return HelpCircle;
-    }
-  };
 
   return (
     <section
@@ -68,16 +59,13 @@ export function LearningDashboard() {
           /* Grid of active learning items */
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {learningItems.map((item) => {
-              const Icon = getCategoryIcon(item.category);
+              const Icon = CATEGORY_ICONS[item.category] || HelpCircle;
               const isActive = item.status === 'Active Focus';
 
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-100px' }}
-                  transition={isReducedMotion ? { duration: 0 } : transitionEase}
+                  {...getFadeInUpProps(isReducedMotion)}
                   className={`border p-6 rounded-md bg-surface flex items-start space-x-4 hover:border-accent/40 transition-colors ${
                     isActive ? 'border-accent/30' : 'border-border-custom'
                   }`}
@@ -90,7 +78,7 @@ export function LearningDashboard() {
                         : 'bg-background border-border-custom text-text-secondary'
                     }`}
                   >
-                    <Icon size={16} />
+                    <Icon size={16} aria-hidden="true" />
                   </div>
 
                   {/* Details Card */}

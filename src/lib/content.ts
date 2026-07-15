@@ -2,10 +2,12 @@ import { projects, experiences, certificates, hackathons, learning, timeline } f
 import { Project, Experience, Certificate, Hackathon, Learning, Timeline } from '@/types';
 
 /**
- * Loads and sorts projects by order values.
+ * Loads and sorts projects by order values (excluding templates).
  */
 export function getSortedProjects(): Project[] {
-  return [...projects].sort((a, b) => a.order - b.order);
+  return [...projects]
+    .filter((p) => p.slug !== 'project-template' && !p.slug.includes('template'))
+    .sort((a, b) => a.order - b.order);
 }
 
 /**
@@ -16,42 +18,69 @@ export function getFeaturedProjects(): Project[] {
 }
 
 /**
- * Loads and sorts experiences chronologically.
+ * Loads and sorts experiences chronologically (excluding templates).
  */
 export function getSortedExperiences(): Experience[] {
-  return [...experiences].sort((a, b) => {
-    if (a.endDate === 'Present') return -1;
-    if (b.endDate === 'Present') return 1;
-    return new Date(b.endDate).getTime() - new Date(a.endDate).getTime();
-  });
+  return [...experiences]
+    .filter(
+      (exp) =>
+        !exp.company.toLowerCase().includes('template') &&
+        !exp.company.toLowerCase().includes('organization') &&
+        !exp.role.toLowerCase().includes('template'),
+    )
+    .sort((a, b) => {
+      if (a.endDate === 'Present') return -1;
+      if (b.endDate === 'Present') return 1;
+      return new Date(b.endDate).getTime() - new Date(a.endDate).getTime();
+    });
 }
 
 /**
- * Loads certificates.
+ * Loads certificates (excluding templates).
  */
 export function getCertificates(): Certificate[] {
-  return [...certificates];
+  return [...certificates].filter(
+    (cert) =>
+      !cert.title.toLowerCase().includes('template') &&
+      !cert.issuer.toLowerCase().includes('issuing'),
+  );
 }
 
 /**
- * Loads hackathons.
+ * Loads hackathons (excluding templates).
  */
 export function getHackathons(): Hackathon[] {
-  return [...hackathons];
+  return [...hackathons].filter(
+    (hack) =>
+      !hack.title.toLowerCase().includes('template') &&
+      !hack.title.toLowerCase().includes('hackathon name'),
+  );
 }
 
 /**
- * Loads and sorts learningTelemetry dashboard values.
+ * Loads and sorts learning telemetry values (excluding templates).
  */
 export function getSortedLearning(): Learning[] {
-  return [...learning].sort((a, b) => a.order - b.order);
+  return [...learning]
+    .filter(
+      (learn) =>
+        !learn.title.toLowerCase().includes('template') &&
+        !learn.title.toLowerCase().includes('title of the'),
+    )
+    .sort((a, b) => a.order - b.order);
 }
 
 /**
- * Loads and sorts timeline milestones.
+ * Loads and sorts timeline milestones (excluding templates).
  */
 export function getSortedTimeline(): Timeline[] {
-  return [...timeline].sort((a, b) => a.order - b.order);
+  return [...timeline]
+    .filter(
+      (time) =>
+        !time.title.toLowerCase().includes('template') &&
+        !time.title.toLowerCase().includes('milestone title'),
+    )
+    .sort((a, b) => a.order - b.order);
 }
 
 /**

@@ -5,7 +5,7 @@ import { Cpu, Terminal, Database, Code, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import skillsData from '@/../content/skills.json';
 import { Skill } from '@/types';
-import { transitionEase } from '@/lib/animation';
+import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 /**
@@ -66,7 +66,7 @@ export function Skills() {
         </div>
 
         {/* Categories Grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
           {categories.map((category) => {
             const IconComponent = category.icon;
             const items = groupedSkills[category.name] || [];
@@ -76,16 +76,14 @@ export function Skills() {
             return (
               <motion.div
                 key={category.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={isReducedMotion ? { duration: 0 } : transitionEase}
+                {...getFadeInUpProps(isReducedMotion)}
                 className="border border-border-custom bg-surface p-6 rounded-md hover:border-accent/30 transition-colors flex flex-col justify-between"
+                role="listitem"
               >
                 <div>
                   {/* Category Title Header */}
                   <div className="flex items-center space-x-2.5 text-accent mb-6 border-b border-border-custom/50 pb-3">
-                    <IconComponent size={16} />
+                    <IconComponent size={16} aria-hidden="true" />
                     <span className="font-mono text-xs font-semibold uppercase tracking-wider">
                       {category.name}
                     </span>
@@ -99,6 +97,7 @@ export function Skills() {
                         className="group flex flex-col space-y-1 focus-within:outline-none"
                         tabIndex={0}
                         aria-label={`${skill.name}, ${skill.years || ''}`}
+                        role="group"
                       >
                         <div className="flex items-center justify-between">
                           <span className="text-sm font-medium text-text-primary group-hover:text-accent transition-colors">

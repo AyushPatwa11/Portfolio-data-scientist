@@ -19,13 +19,13 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: 'LinkedIn',
-    username: 'Ayush Patwa',
+    username: siteConfig.name,
     url: siteConfig.links.linkedin,
     iconName: 'Linkedin',
   },
   {
     platform: 'Email',
-    username: 'ayushpatwa11@gmail.com',
+    username: siteConfig.links.email.replace('mailto:', ''),
     url: siteConfig.links.email,
     iconName: 'Mail',
   },

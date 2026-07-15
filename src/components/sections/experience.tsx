@@ -1,10 +1,9 @@
 'use client';
 
-import * as React from 'react';
 import { Briefcase, Landmark, Calendar, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getSortedExperiences } from '@/lib/content';
-import { transitionEase } from '@/lib/animation';
+import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 /**
@@ -14,20 +13,7 @@ import { useReducedMotion } from '@/hooks/use-reduced-motion';
  */
 export function ExperienceSection() {
   const isReducedMotion = useReducedMotion();
-
-  // Load and filter out template placeholders
-  const experiences = React.useMemo(() => {
-    try {
-      return getSortedExperiences().filter(
-        (exp) =>
-          !exp.company.toLowerCase().includes('template') &&
-          !exp.company.toLowerCase().includes('organization'),
-      );
-    } catch (e) {
-      console.error('Failed to load experiences', e);
-      return [];
-    }
-  }, []);
+  const experiences = getSortedExperiences();
 
   return (
     <section
@@ -53,10 +39,7 @@ export function ExperienceSection() {
         {experiences.length === 0 ? (
           /* Recruiter-friendly fallback empty state */
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={isReducedMotion ? { duration: 0 } : transitionEase}
+            {...getFadeInUpProps(isReducedMotion)}
             className="border border-border-custom bg-surface p-8 md:p-12 rounded-md text-center max-w-xl mx-auto flex flex-col items-center space-y-4"
           >
             <div className="w-12 h-12 rounded-full border border-border-custom flex items-center justify-center text-text-secondary bg-background/50">
@@ -66,7 +49,9 @@ export function ExperienceSection() {
               Strengthening Foundations
             </h3>
             <p className="text-xs text-text-secondary leading-relaxed max-w-sm">
-              {"I'm currently focused on strengthening my skills through projects, coursework, and continuous learning while preparing for internships."}
+              {
+                "I'm currently focused on strengthening my skills through projects, coursework, and continuous learning while preparing for internships."
+              }
             </p>
           </motion.div>
         ) : (
@@ -75,10 +60,7 @@ export function ExperienceSection() {
             {experiences.map((exp) => (
               <motion.article
                 key={`${exp.company}-${exp.role}`}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={isReducedMotion ? { duration: 0 } : transitionEase}
+                {...getFadeInUpProps(isReducedMotion)}
                 className="group border border-border-custom bg-surface p-6 rounded-md hover:border-accent/40 transition-colors"
               >
                 {/* Header Coordinate Area */}

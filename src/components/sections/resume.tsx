@@ -1,10 +1,9 @@
 'use client';
 
-import * as React from 'react';
 import { FileText, Download, ExternalLink, Calendar, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
-import { transitionEase } from '@/lib/animation';
+import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 /**
@@ -37,10 +36,7 @@ export function ResumeSection() {
 
         {/* Bento grid panel */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={isReducedMotion ? { duration: 0 } : transitionEase}
+          {...getFadeInUpProps(isReducedMotion)}
           className="border border-border-custom bg-surface p-6 md:p-8 rounded-md max-w-3xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-8 hover:border-accent/40 transition-colors"
         >
           {/* Info Details left */}

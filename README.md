@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ayush Patwa Portfolio Platform
 
-## Getting Started
+Empirical, minimalist developer portfolio platform built in Next.js 16 and TypeScript, incorporating type-safe static schema compilation (Velite) and Tailwind CSS v4 styling.
 
-First, run the development server:
+---
+
+## 🛠️ Tech Stack & Core Engineering
+
+- **Core Framework**: Next.js 16.2.10 (App Router, Static Export target)
+- **Programming Language**: TypeScript (Strict Mode)
+- **Style Ingestions**: Tailwind CSS v4 (monochromatic theme + Aki Cobalt accent color)
+- **Animation Engine**: Framer Motion 12
+- **Data Compiler**: Velite 0.1.1 (Zod-validated markdown/json models compiled at build-time)
+- **Icons**: Lucide Icons
+
+---
+
+## 📂 Folder Structure
+
+```
+.
+├── content/                     # Dynamic markdown/json collections (Zod-validated)
+│   ├── projects/                # MDX project case studies
+│   ├── experience/              # Professional work & student leadership JSONs
+│   ├── certificates/            # Verified certificates JSONs
+│   ├── hackathons/              # Hackathons and milestones JSONs
+│   ├── learning/                # Active study dashboard cards
+│   ├── timeline/                # Academic history ticks
+│   └── skills.json              # Core tech stack checklist
+├── public/                      # Static assets
+│   ├── resume/
+│   │   └── resume.pdf           # Configurable resume PDF
+│   └── images/
+│       └── avatar.png           # Profile photo
+├── src/
+│   ├── app/                     # Next.js App Router root layouts & sitemaps
+│   ├── components/
+│   │   ├── layout/              # Navbars and headers
+│   │   └── sections/            # Portfolio viewport sections
+│   ├── config/                  # Configuration layers (navigation, site, SEO)
+│   ├── hooks/                   # Client-side React hooks (useTheme, useReducedMotion)
+│   ├── lib/                     # Helpers (SEO constructMetadata, animation presets)
+│   └── types/                   # Shared TypeScript interfaces
+├── velite.config.ts             # Velite compilation schema definitions
+└── package.json                 # Package targets
+```
+
+---
+
+## 🛠️ Data-Driven Content Management
+
+All sections on the homepage are data-driven. Templates are saved in each content folder with a `-template` suffix and are automatically filtered out during production builds.
+
+### 1. How to Add a Project Case Study
+
+1. Copy `content/projects/project-template.mdx` to a new file named `my-project-slug.mdx`.
+2. Populate the frontmatter fields (title, description, techStack, etc.).
+3. Author the case study section body details:
+   - `problem`: What challenges were encountered?
+   - `solution`: What statistical methods/architecture resolved them?
+   - `challenges`: What broke during development?
+   - `learnings`: What insights were gained?
+   - `futureImprovements`: How does the project scale?
+4. Run `npm run build` to compile the static page dynamically.
+
+### 2. How to Add a Certificate
+
+1. Copy `content/certificates/certificate-template.json` to a new file (e.g. `deep-learning-specialization.json`).
+2. Populate the title, issuer, issueDate, and verifyUrl fields.
+3. The certificate will render automatically under the **Credentials** section.
+
+### 3. How to Update the Resume
+
+1. Replace `public/resume/resume.pdf` with your new PDF resume.
+2. Open `src/config/site.ts` and update the metadata:
+   - `resumeVersion`: Increment the semantic version (e.g. `'v1.2.1'`).
+   - `resumeLastUpdated`: Update the date stamp (e.g. `'July 2026'`).
+3. The UI will instantly display the updated date and version alongside the download actions.
+
+---
+
+## 🚀 Development & Compilation
+
+### Setup Dependencies
+
+```bash
+npm install
+```
+
+### Run Local Dev Server (includes live Velite watcher)
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build Production Static Output (HTML/CSS export)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+_The compiled export directory will be generated under `/out`._
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ☁️ Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Since the project builds as a completely static site (via `output: 'export'` target in `next.config.ts`), it can be hosted on **Vercel**, **GitHub Pages**, **Netlify**, or **Cloudflare Pages**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Vercel Deployment (Recommended)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Import the repository on Vercel.
+2. In Project Settings, ensure the Build Command is `npm run build` and Output Directory is `out`.
+3. Deploy.

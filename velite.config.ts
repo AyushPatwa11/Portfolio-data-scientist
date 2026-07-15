@@ -19,13 +19,15 @@ const projects = defineCollection({
     publishedAt: s.string(),
     updatedAt: s.string(),
     order: s.number().default(0),
-    caseStudy: s.object({
-      problem: s.string(),
-      solution: s.string(),
-      challenges: s.string(),
-      learnings: s.string(),
-      futureImprovements: s.string(),
-    }).optional(),
+    caseStudy: s
+      .object({
+        problem: s.string(),
+        solution: s.string(),
+        challenges: s.string(),
+        learnings: s.string(),
+        futureImprovements: s.string(),
+      })
+      .optional(),
     content: s.mdx(),
   }),
 });

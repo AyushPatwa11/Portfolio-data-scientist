@@ -25,6 +25,8 @@ export interface Project {
   thumbnail?: string;
   publishedAt: string;
   updatedAt: string;
+  order: number;
+  content: string;
   caseStudy?: ProjectCaseStudy;
 }
 
