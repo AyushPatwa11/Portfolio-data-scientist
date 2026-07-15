@@ -1,7 +1,16 @@
 'use client';
 
 import * as React from 'react';
-import { Mail, Linkedin, Github, MapPin, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import {
+  Mail,
+  Linkedin,
+  Github,
+  MapPin,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  FileText,
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
 import { getFadeInUpProps } from '@/lib/animation';
@@ -164,6 +173,15 @@ export function ContactSection() {
               >
                 <Github size={14} />
                 <span>github.com/AyushPatwa11</span>
+              </a>
+              <a
+                href={siteConfig.resumePath}
+                download={`${siteConfig.name.replace(' ', '_')}_Resume.pdf`}
+                className="flex items-center space-x-3 text-text-secondary hover:text-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent w-fit py-1"
+                aria-label="Download professional resume PDF"
+              >
+                <FileText size={14} />
+                <span>DOWNLOAD_RESUME ({siteConfig.resumeVersion})</span>
               </a>
             </div>
           </div>

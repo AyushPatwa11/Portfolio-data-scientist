@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { ArrowUp, Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { navigationItems } from '@/config/navigation';
 
@@ -32,10 +32,6 @@ export function Footer() {
             >
               {siteConfig.name.toUpperCase()}
             </Link>
-            <p className="text-xs max-w-sm leading-relaxed">
-              Computer Science student building data-driven pipelines and intelligent software.
-              Fusing empirical analysis with clean, production-ready engineering.
-            </p>
           </div>
 
           {/* Middle Block: Navigation */}
@@ -97,10 +93,7 @@ export function Footer() {
             <p>
               © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
             </p>
-            <p className="flex items-center gap-1">
-              Built with Next.js & Tailwind CSS. Designed with{' '}
-              <Heart size={8} className="text-accent fill-accent" /> for recruiters.
-            </p>
+            <p>Built with Next.js & Tailwind CSS.</p>
           </div>
 
           {/* Version stamp + back-to-top */}
