@@ -8,6 +8,8 @@ import { LearningDashboard } from '@/components/sections/learning';
 import { ExperienceSection } from '@/components/sections/experience';
 import { CertificatesSection } from '@/components/sections/certificates';
 import { AchievementsSection } from '@/components/sections/achievements';
+import { GithubSection } from '@/components/sections/github';
+import { ResumeSection } from '@/components/sections/resume';
 
 /**
  * Root Landing Page.
@@ -27,6 +29,8 @@ export default function Home() {
         <ExperienceSection />
         <CertificatesSection />
         <AchievementsSection />
+        <GithubSection />
+        <ResumeSection />
       </main>
     </div>
   );

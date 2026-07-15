@@ -20,4 +20,18 @@ export const siteConfig = {
   },
   timezone: 'Asia/Kolkata',
   location: 'Mumbai, India',
+  resumePath: '/resume/resume.pdf',
+  resumeVersion: 'v1.2.0',
+  resumeLastUpdated: 'July 2026',
+  githubFallbackRepos: [
+    {
+      name: 'Portfolio-data-scientist',
+      description: 'Personal portfolio website platform built in Next.js 16 and TypeScript, incorporating dynamic schema loaders.',
+      language: 'TypeScript',
+      topics: ['nextjs', 'typescript', 'tailwind-css', 'velite'],
+      updatedAt: '2026-07-15',
+      htmlUrl: 'https://github.com/AyushPatwa11/Portfolio-data-scientist',
+      isPinned: true
+    }
+  ]
 };
