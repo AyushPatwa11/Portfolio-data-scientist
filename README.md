@@ -113,11 +113,14 @@ _The compiled export directory will be generated under `/out`._
 
 ## ☁️ Deployment
 
-Since the project builds as a completely static site (via `output: 'export'` target in `next.config.ts`), it can be hosted on **Vercel**, **GitHub Pages**, **Netlify**, or **Cloudflare Pages**.
+The recommended Vercel setup is to deploy the frontend workspace from this monorepo and treat the backend as a separate service.
 
-1. Import the repository on Vercel.
-2. In Project Settings, ensure the Build Command is `npm run build` and Output Directory is `out`.
-3. Deploy.
+1. Import the repository into Vercel.
+2. Set the Project Root to `Portfolio-data-scientist` if you want Vercel to deploy only the Next.js app directly.
+3. If you keep the repository root selected, use the root build command `npm run build` from the monorepo package.json.
+4. Deploy the backend separately if you need its API in production, since the Express server in `backend/` is not a Vercel server process.
+
+If you want a fully Vercel-native backend later, the Express routes can be moved to Vercel serverless functions or Next.js route handlers.
 
 ---
 
