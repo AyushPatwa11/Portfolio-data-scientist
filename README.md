@@ -2,6 +2,14 @@
 
 Empirical, minimalist developer portfolio platform built in Next.js 16 and TypeScript, incorporating type-safe static schema compilation (Velite) and Tailwind CSS v4 styling.
 
+Note: This repository has been converted into a small monorepo to separate concerns:
+
+- `Portfolio-data-scientist/` — the existing Next.js frontend app (no changes performed to source files).
+- `backend/` — new Express-based backend for lightweight APIs.
+- Root `package.json` — workspace scripts to run frontend and backend independently.
+
+See the root README section below for quick run instructions.
+
 ---
 
 ## 🛠️ Tech Stack & Core Engineering
