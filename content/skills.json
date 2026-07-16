@@ -2,7 +2,7 @@
   {
     "name": "Python",
     "category": "Programming Languages",
-    "years": "3 Years",
+    "years": "2 Years",
     "description": "Primary language for data pipelines, scripting, and statistical modeling.",
     "displayOrder": 1,
     "visible": true
@@ -10,7 +10,7 @@
   {
     "name": "SQL",
     "category": "Programming Languages",
-    "years": "2 Years",
+    "years": "1 Year",
     "description": "Optimizing queries, indexing, and structuring relational schemas.",
     "displayOrder": 2,
     "visible": true
@@ -18,7 +18,7 @@
   {
     "name": "Java",
     "category": "Programming Languages",
-    "years": "2 Years",
+    "years": "3 Years",
     "description": "Mastery of object-oriented design and classical DSA structures.",
     "displayOrder": 3,
     "visible": true
@@ -58,7 +58,7 @@
   {
     "name": "React",
     "category": "Frontend",
-    "years": "1 Year",
+    "years": "2 Years",
     "description": "Building interactive browser UIs and layout components.",
     "displayOrder": 8,
     "visible": true
@@ -66,7 +66,7 @@
   {
     "name": "Node.js & Express",
     "category": "Backend",
-    "years": "1 Year",
+    "years": "2 Years",
     "description": "Developing REST APIs and backend controller endpoints.",
     "displayOrder": 9,
     "visible": true

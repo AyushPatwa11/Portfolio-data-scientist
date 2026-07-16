@@ -20,7 +20,7 @@ export const siteConfig = {
     active: true,
   },
   timezone: 'Asia/Kolkata',
-  location: 'Mumbai, Maharashtra, India',
+  location: 'Raipur, Chhattisgarh, India',
   resumePath: '/resume/resume.pdf',
   resumeVersion: 'v1.2.0',
   resumeLastUpdated: 'July 2026',
