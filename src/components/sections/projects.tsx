@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Github, ExternalLink, BookOpen, Inbox } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getFeaturedProjects } from '@/lib/content';
@@ -98,11 +99,13 @@ export function Projects() {
                 {/* Visual Thumbnail Frame */}
                 <div className="relative aspect-video w-full border-b border-border-custom bg-background/50 overflow-hidden">
                   {project.thumbnail ? (
-                    <img
+                    <Image
                       src={project.thumbnail}
                       alt={`${project.title} Preview`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      fill
+                      unoptimized
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center font-mono text-2xs text-text-secondary select-none">
