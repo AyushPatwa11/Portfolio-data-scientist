@@ -1,0 +1,163 @@
+/* ====================================================================
+   COMPONENT SYSTEM SELECTORS
+   Global overrides of native elements to inherit visual token variables.
+   Uses native CSS selectors for robust building.
+   ==================================================================== */
+
+/* Global Input Fields Styling Override */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+textarea,
+select {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-text);
+  padding: 0.625rem 1rem; /* 10px 16px */
+  font-size: 0.75rem; /* 12px */
+  font-family: var(--font-sans);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: var(--input-placeholder);
+  opacity: 0.8;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--input-border-hover);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--bg-level-2);
+}
+
+/* Validation states */
+.input-error {
+  border-color: var(--error) !important;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+.input-success {
+  border-color: var(--success) !important;
+}
+
+/* Selection list dropdown custom styling */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2371717a' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
+}
+
+/* Custom Checkbox and Radio styling */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--accent);
+  width: 0.875rem;
+  height: 0.875rem;
+  cursor: pointer;
+}
+
+/* Global Native Button Overrides */
+
+button,
+.btn-style {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem; /* 8px 16px */
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  outline: none;
+}
+
+button:focus-visible,
+.btn-style:focus-visible {
+  box-shadow: 0 0 0 3px var(--focus-ring);
+  border-color: var(--border-focus);
+}
+
+button:disabled,
+.btn-style:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Cards system classes (Native groupings) */
+
+.card-static,
+.card-interactive,
+.card-compact {
+  background-color: var(--card-bg-static);
+  border: 1px solid var(--card-border-static);
+  border-radius: var(--radius-md);
+  padding: 1.5rem; /* 24px */
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-interactive {
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: var(--shadow-elevated);
+}
+
+.card-featured {
+  background-color: var(--bg-level-2);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-elevated);
+}
+
+.card-compact {
+  padding: 1rem; /* 16px */
+}
+
+/* Standardized Iconography Styles */
+
+svg.lucide {
+  stroke-width: 1.75;
+  transition: stroke 0.2s ease, transform 0.2s ease;
+}
+
+a:hover svg.lucide,
+button:hover svg.lucide {
+  color: var(--accent);
+}

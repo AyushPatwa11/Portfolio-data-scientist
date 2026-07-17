@@ -1,35 +1,48 @@
 /**
- * Design system visual tokens for the portfolio.
+ * Centralized Visual Language Primitives and Design Tokens.
  * 
- * These constants form the core aesthetic guidelines for layout,
- * elevations, blur scales, and depth layering.
+ * Maps variables directly to theme variables for consistency in both
+ * TypeScript scripts and Framer Motion variants.
  * 
  * @module tokens
  */
 export const DESIGN_TOKENS = {
   /**
-   * Border radius tokens for consistency across interactive surfaces, badges, and modals.
+   * Surface levels defining interface hierarchy.
+   */
+  surfaces: {
+    level0: 'var(--bg-level-0)', // Primary background ( editorial light-grey / dark-neutral )
+    level1: 'var(--bg-level-1)', // Standard surface container ( card elements, base layouts )
+    level2: 'var(--bg-level-2)', // Elevated surface container ( sidebar panel, hover highlights )
+    level3: 'var(--bg-level-3)', // Over-the-top surface container ( active dropdowns, dialogs )
+  },
+
+  /**
+   * Border radius tokens.
    */
   radius: {
     none: '0px',
-    xs: '2px',       // Micro components (tags, badges, inline labels)
-    sm: '4px',       // Small components (tooltips, small buttons, custom focus markers)
-    md: '8px',       // Default UI elements (standard buttons, text inputs, card containers)
-    lg: '12px',      // Primary containers (major grid cards, panel structures, modals)
+    xs: '2px',       // Badges, focus indicators
+    sm: '4px',       // Inputs, badge buttons
+    md: '8px',       // Default buttons, cards
+    lg: '12px',      // Portals, large modals
+    xl: '16px',      // Accent cards, special layouts
+    full: '9999px',  // Circular indicators, pills
   },
 
   /**
-   * Elevation shadow configurations tailored for both dark and light modes.
+   * Elevation shadow configurations.
    */
   shadows: {
     none: 'none',
-    subtle: '0 2px 8px rgba(0, 0, 0, 0.04)',
-    elevated: '0 8px 24px rgba(0, 0, 0, 0.06)',
-    premium: '0 16px 40px rgba(0, 0, 0, 0.08)',
+    subtle: 'var(--shadow-subtle)',     // Static subtle card outline depth
+    elevated: 'var(--shadow-elevated)', // Hover states or dropdown sheets
+    floating: 'var(--shadow-floating)', // Hover on primary CTAs, popup dialogs
+    premium: 'var(--shadow-premium)',   // Full overlay panels, modals
   },
 
   /**
-   * Glassmorphism backdrop-blur scales for navbars, sticky headers, and floating overlays.
+   * Glassmorphism backdrop-blur scales.
    */
   blur: {
     none: '0px',
@@ -39,28 +52,28 @@ export const DESIGN_TOKENS = {
   },
 
   /**
-   * Semantic opacity presets for micro transitions and hierarchy states.
+   * Semantic opacity scales.
    */
   opacity: {
     hidden: 0,
-    subtle: 0.3,     // Inactive elements, disabled status indicators, placeholders
-    muted: 0.6,      // Secondary information labels, quiet icons, un-hovered states
-    visible: 1,      // Primary copy, active focus fields, highlighted details
+    subtle: 0.3,     // Inactive elements, helper info
+    muted: 0.6,      // Secondary descriptions
+    visible: 1,      // Primary copy
   },
 
   /**
-   * Depth stacking levels to prevent z-index collision issues.
+   * Depth stacking z-indices.
    */
   zIndex: {
     base: 0,
-    above: 10,       // Hover highlight sheets, floating item overlays
-    sticky: 100,     // Floating header bar, primary navigation dock
-    overlay: 500,    // Portal drawers, global warning backdrops, modal popups
+    above: 10,       // Hover highlighting overlays
+    sticky: 100,     // Navigation bars
+    overlay: 500,    // Modals, portal drawers
     cursor: 9999,    // Custom cursor telemetry capture layer
   },
 
   /**
-   * Motion offset spacings for transitions (e.g. translate-y offset).
+   * Motion offset spacings for transitions.
    */
   spacing: {
     xs: '4px',
@@ -71,16 +84,19 @@ export const DESIGN_TOKENS = {
   },
 
   /**
-   * Structural widths for typographic prose, article feeds, and layout sections.
+   * Structural widths.
    */
   widths: {
-    prose: '65ch',
-    article: '80ch',
-    section: '1200px',
+    prose: 'var(--width-prose)',       // 65ch max-width reading bounds
+    article: 'var(--width-article)',   // 80ch max-width article layout
+    section: 'var(--width-section)',   // 1200px max-width section grid
+    content: 'var(--width-content)',   // 960px max-width readable columns
+    dashboard: 'var(--width-dashboard)', // 1440px max-width large dashboard layout
   }
 } as const;
 
 export type DesignTokens = typeof DESIGN_TOKENS;
+export type SurfaceLevelToken = keyof typeof DESIGN_TOKENS.surfaces;
 export type BorderRadiusToken = keyof typeof DESIGN_TOKENS.radius;
 export type ShadowToken = keyof typeof DESIGN_TOKENS.shadows;
 export type BlurToken = keyof typeof DESIGN_TOKENS.blur;

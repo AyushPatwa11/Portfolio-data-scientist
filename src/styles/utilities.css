@@ -1,0 +1,62 @@
+/* ====================================================================
+   DESIGN SYSTEM UTILITIES
+   Custom design utilities not standard to Tailwind v4 primitives.
+   ==================================================================== */
+
+/* Custom keyboard navigation focus ring helper */
+.focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+  border-color: var(--border-focus);
+}
+
+/* Glass card overrides (premium, restrained glassmorphism) */
+.glass-panel {
+  background-color: rgba(var(--bg-level-1), 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-default);
+}
+
+/* Centralized Layout width markers */
+.width-prose {
+  max-width: var(--width-prose);
+}
+
+.width-article {
+  max-width: var(--width-article);
+}
+
+.width-section {
+  max-width: var(--width-section);
+}
+
+.width-content {
+  max-width: var(--width-content);
+}
+
+.width-dashboard {
+  max-width: var(--width-dashboard);
+}
+
+/* Performant scroll utilities */
+.custom-scroll {
+  scrollbar-gutter: stable;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: var(--bg-level-0);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: var(--radius-full);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
