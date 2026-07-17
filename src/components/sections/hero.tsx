@@ -1,29 +1,27 @@
 'use client';
 
 import * as React from 'react';
-import { ArrowRight, FileText, Mail, ChevronDown } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ArrowRight, FileText, Mail, ChevronDown, Github, Linkedin } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
-import { transitionEase, transitionSpring } from '@/lib/animation';
-import { useReducedMotion } from '@/hooks/use-reduced-motion';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Reveal } from '@/components/experience/reveal';
 
 /**
  * Premium Hero Section Component.
- * Implements desktop split-screen layout (text left, interactive SVG right).
- * Built with strict design tokens, Framer Motion sequence animations,
- * and accessibility keyboard navigation aids.
+ * 
+ * Implements a balanced split layout optimized for recruiter scanning.
+ * Integrated with the Experience System Reveal triggers and Visual UI components.
  */
 export function Hero() {
   const isReducedMotion = useReducedMotion();
-
-  // Sequence delays
-  const delayStep = isReducedMotion ? 0 : 0.1;
 
   // Render responsive interactive data nodes representing neural network configurations
   const renderSVGNodes = () => {
     return (
       <svg
-        className="w-full h-full max-w-[480px] max-h-[480px] mx-auto text-border-custom"
+        className="w-full h-full max-w-[420px] max-h-[420px] mx-auto text-border-custom"
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +46,7 @@ export function Hero() {
           y="370"
           className="font-mono text-[9px] fill-text-secondary tracking-widest uppercase"
         >
-          SYS: V1.0_READY
+          SYS: V2.0_FROZEN
         </text>
 
         {/* Grid dots background */}
@@ -128,103 +126,120 @@ export function Hero() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         {/* Left Column: Typographic Statements */}
         <div className="md:col-span-7 flex flex-col space-y-6 text-left">
-          {/* Dynamic Uptime Telemetry Label */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transitionEase, delay: 0 }}
-            className="flex items-center space-x-2"
-          >
-            <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+          {/* Availability Status Badge */}
+          <Reveal variant="fade-up" delay={0.05} className="flex items-center space-x-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
             <span className="font-mono text-2xs uppercase tracking-wider text-text-secondary">
               {siteConfig.status.label}
             </span>
-          </motion.div>
+          </Reveal>
 
-          {/* Main Headline */}
-          <motion.h1
-            id="hero-title"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transitionEase, delay: delayStep }}
-            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-[1.1]"
-          >
-            Structuring data,
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-secondary">
-              engineering intelligence.
-            </span>
-          </motion.h1>
-
-          {/* Subheadline Paragraph */}
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transitionEase, delay: delayStep * 2 }}
-            className="text-base text-text-secondary leading-relaxed max-w-lg"
-          >
-            I am a Computer Science student at university, focused on translating statistical data
-            pipelines into clean, deployable algorithms. I specialize in Python, Java, and SQL,
-            building toward engineering intelligent, production-ready AI systems.
-          </motion.p>
-
-          {/* Call to Actions Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transitionEase, delay: delayStep * 3 }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2"
-          >
-            {/* Primary CTA */}
-            <a
-              href="#projects"
-              className="flex items-center justify-center space-x-2 bg-text-primary text-background hover:bg-accent hover:text-white px-5 py-3 text-sm font-medium rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all"
-              aria-label="View featured projects"
+          {/* Name & Headline */}
+          <Reveal variant="fade-up" delay={0.1} className="space-y-2">
+            <p className="font-mono text-2xs text-accent uppercase tracking-widest">[ AYUSH PATWA ]</p>
+            <h1
+              id="hero-title"
+              className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-[1.1]"
             >
-              <span>View Projects</span>
-              <ArrowRight size={14} />
-            </a>
+              Building intelligent systems
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-secondary">
+                with data & machine learning.
+              </span>
+            </h1>
+          </Reveal>
 
-            {/* Secondary CTA */}
+          {/* One-Sentence Value Proposition */}
+          <Reveal variant="fade-up" delay={0.15}>
+            <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-lg">
+              Computer Science student translating mathematical models into robust pipelines and deployable, production-ready AI applications.
+            </p>
+          </Reveal>
+
+          {/* Primary and Secondary CTA Buttons */}
+          <Reveal variant="fade-up" delay={0.2} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <a href="#projects" className="w-full sm:w-auto">
+              <Button variant="primary" className="w-full">
+                <span>View Projects</span>
+                <ArrowRight size={14} className="ml-1" />
+              </Button>
+            </a>
             <a
-              href="/resume/resume.pdf"
+              href={siteConfig.resumePath}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-2 border border-border-custom bg-surface text-text-primary hover:border-accent hover:text-accent px-5 py-3 text-sm font-medium rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all"
-              aria-label="Download PDF Resume"
+              className="w-full sm:w-auto"
             >
-              <FileText size={14} />
-              <span>Download Resume</span>
+              <Button variant="secondary" className="w-full">
+                <FileText size={14} className="mr-1" />
+                <span>Download Resume</span>
+              </Button>
             </a>
+          </Reveal>
 
-            {/* Let's Connect Link */}
+          {/* Inline Lightweight Social Icons */}
+          <Reveal variant="fade-up" delay={0.25} className="flex items-center space-x-4 pt-4 border-t border-border-custom/50 w-full max-w-xs">
             <a
-              href="#contact"
-              className="flex items-center justify-center space-x-2 text-xs font-mono text-text-secondary hover:text-text-primary px-4 py-3 rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent transition-all"
-              aria-label="Navigate to contact section"
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-accent transition-colors p-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded"
+              aria-label="View GitHub Profile"
             >
-              <Mail size={12} />
-              <span>{"LET'S CONNECT"}</span>
+              <Github size={16} />
             </a>
-          </motion.div>
+            <a
+              href={siteConfig.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-accent transition-colors p-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded"
+              aria-label="View LinkedIn Profile"
+            >
+              <Linkedin size={16} />
+            </a>
+            <a
+              href={siteConfig.links.email}
+              className="text-text-secondary hover:text-accent transition-colors p-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded"
+              aria-label="Send Direct Email"
+            >
+              <Mail size={16} />
+            </a>
+          </Reveal>
+
+          {/* Three Trust Signals */}
+          <Reveal variant="fade-up" delay={0.3} className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-[10px] font-mono text-text-secondary uppercase tracking-wider">
+            <span className="flex items-center">
+              <span className="mr-1.5" aria-hidden="true">📍</span> Raipur, India
+            </span>
+            <span className="flex items-center">
+              <span className="mr-1.5" aria-hidden="true">🤖</span> AI & Data Science
+            </span>
+            <span className="flex items-center">
+              <span className="mr-1.5" aria-hidden="true">🟢</span> Open to Internships
+            </span>
+          </Reveal>
         </div>
 
-        {/* Right Column: Premium SVG network graph */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ ...transitionSpring, delay: delayStep * 4 }}
-          className="md:col-span-5 flex items-center justify-center w-full aspect-square border border-border-custom bg-surface/40 backdrop-blur-md rounded-md p-6 relative overflow-hidden"
+        {/* Right Column: Refined Interactive Neural Graph inside static Card */}
+        <Reveal
+          variant="scale"
+          delay={0.35}
+          className="md:col-span-5 flex items-center justify-center w-full aspect-square relative"
         >
-          {renderSVGNodes()}
-        </motion.div>
+          <Card
+            variant="static"
+            className="w-full h-full flex items-center justify-center bg-surface/40 backdrop-blur-md p-6 relative overflow-hidden"
+          >
+            {renderSVGNodes()}
+          </Card>
+        </Reveal>
       </div>
 
       {/* Scroll indicator overlay */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: delayStep * 5, duration: 0.5 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-1"
         aria-hidden="true"
       >
