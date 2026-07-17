@@ -1,15 +1,8 @@
 import { Navbar } from '@/components/layout/navbar';
 import { Hero } from '@/components/sections/hero';
 import { About } from '@/components/sections/about';
-import { Journey } from '@/components/sections/journey';
 import { Projects } from '@/components/sections/projects';
-import { Skills } from '@/components/sections/skills';
-import { LearningDashboard } from '@/components/sections/learning';
 import { ExperienceSection } from '@/components/sections/experience';
-import { CertificatesSection } from '@/components/sections/certificates';
-import { AchievementsSection } from '@/components/sections/achievements';
-import { GithubSection } from '@/components/sections/github';
-import { ResumeSection } from '@/components/sections/resume';
 import { ContactSection } from '@/components/sections/contact';
 import { Footer } from '@/components/layout/footer';
 
@@ -24,15 +17,8 @@ export default function Home() {
       <main className="flex-grow w-full">
         <Hero />
         <About />
-        <Journey />
         <Projects />
-        <Skills />
-        <LearningDashboard />
         <ExperienceSection />
-        <CertificatesSection />
-        <AchievementsSection />
-        <GithubSection />
-        <ResumeSection />
         <ContactSection />
       </main>
       <Footer />

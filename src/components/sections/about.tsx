@@ -1,8 +1,7 @@
 'use client';
 
-import { Compass, Activity, MapPin } from 'lucide-react';
+import { Compass, Activity } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { siteConfig } from '@/config/site';
 import { getFadeInUpProps } from '@/lib/animation';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
@@ -72,61 +71,65 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Right Bento Cards Stack: Academic details */}
+          {/* Right Bento Cards Stack: Recency & Stack details */}
           <div className="md:col-span-4 flex flex-col gap-6">
-            {/* Status Card */}
+            {/* Current Focus Card */}
             <motion.div
               {...getFadeInUpProps(isReducedMotion)}
               className="border border-border-custom bg-surface p-6 rounded-md flex-1 flex flex-col justify-between hover:border-accent/40 transition-colors"
             >
-              <div className="flex items-center justify-between text-text-secondary font-mono text-2xs uppercase tracking-wider">
-                <div className="flex items-center space-x-2">
-                  <Activity size={14} className="text-accent" />
-                  <span>Academic Telemetry</span>
+              <div>
+                <div className="flex items-center space-x-2 text-accent mb-4">
+                  <Activity size={14} />
+                  <span className="font-mono text-2xs uppercase tracking-wider">Current Focus</span>
                 </div>
+                <ul className="space-y-2.5 text-xs text-text-secondary font-mono list-none">
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">→</span>
+                    <span>Building Portfolio V2</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">→</span>
+                    <span>Learning MLOps & Systems</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">→</span>
+                    <span>Solving LeetCode Algorithms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">→</span>
+                    <span>Seeking AI/ML Internships</span>
+                  </li>
+                </ul>
               </div>
-
-              <div className="space-y-4 my-6">
-                <div>
-                  <p className="text-2xs font-mono text-text-secondary uppercase tracking-widest">
-                    Course Focus
-                  </p>
-                  <p className="text-base font-bold text-text-primary">Algorithms, Databases, ML</p>
-                </div>
-                <div>
-                  <p className="text-2xs font-mono text-text-secondary uppercase tracking-widest">
-                    Coding Language Focus
-                  </p>
-                  <p className="text-base font-bold text-text-primary">Python, Java, SQL</p>
-                </div>
-              </div>
-
-              <div className="text-[9px] font-mono text-text-secondary uppercase tracking-widest">
-                Current: 6th Semester student
+              <div className="text-[9px] font-mono text-text-secondary uppercase tracking-widest mt-4">
+                Active status: Online
               </div>
             </motion.div>
 
-            {/* Location Card */}
+            {/* Core Stack Card */}
             <motion.div
               {...getFadeInUpProps(isReducedMotion)}
               className="border border-border-custom bg-surface p-6 rounded-md flex flex-col justify-between hover:border-accent/40 transition-colors"
             >
-              <div className="flex items-center justify-between text-text-secondary font-mono text-2xs uppercase tracking-wider">
-                <div className="flex items-center space-x-2">
-                  <MapPin size={14} className="text-accent" />
-                  <span>Location</span>
+              <div>
+                <div className="flex items-center space-x-2 text-accent mb-4">
+                  <Compass size={14} />
+                  <span className="font-mono text-2xs uppercase tracking-wider">Core Tech Stack</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {['Python', 'SQL', 'Java', 'PyTorch', 'Next.js', 'Git'].map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-[10px] font-mono text-text-secondary border border-border-custom px-2 py-0.5 rounded bg-background"
+                    >
+                      {tool}
+                    </span>
+                  ))}
                 </div>
               </div>
-
-              <div className="my-4">
-                <p className="text-xl font-bold text-text-primary">{siteConfig.location}</p>
-                <p className="text-xs text-text-secondary mt-1">
-                  Active in {siteConfig.timezone} timezone.
-                </p>
-              </div>
-
-              <div className="text-[9px] font-mono text-text-secondary uppercase tracking-widest">
-                Availability: Internship Ready
+              <div className="text-[9px] font-mono text-text-secondary uppercase tracking-widest mt-6">
+                Availability: Immediate
               </div>
             </motion.div>
           </div>

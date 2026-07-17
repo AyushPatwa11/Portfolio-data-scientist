@@ -9,10 +9,7 @@ export interface NavLink {
  * Follows the recruiter psychological scroll order layout.
  */
 export const navigationItems: NavLink[] = [
-  { label: 'About', href: '#about', iconName: 'User' },
-  { label: 'Journey', href: '#journey', iconName: 'Route' },
-  { label: 'Projects', href: '#projects', iconName: 'FolderCode' },
-  { label: 'Skills', href: '#skills', iconName: 'Cpu' },
-  { label: 'Learning', href: '#learning', iconName: 'PlayCircle' },
-  { label: 'Contact', href: '#contact', iconName: 'Mail' },
+  { label: 'About', href: '/about', iconName: 'User' },
+  { label: 'Projects', href: '/projects', iconName: 'FolderCode' },
+  { label: 'Contact', href: '/#contact', iconName: 'Mail' },
 ];

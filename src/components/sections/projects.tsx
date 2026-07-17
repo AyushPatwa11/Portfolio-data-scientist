@@ -42,18 +42,6 @@ export function Projects() {
                 A selection of data pipelines, statistical modules, and software platforms.
               </p>
             </div>
-            {featuredProjects.length > 0 && (
-              <a
-                href="https://github.com/AyushPatwa11"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-xs font-mono text-text-secondary hover:text-text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded"
-                aria-label="View all repositories on GitHub"
-              >
-                <Github size={14} />
-                <span>VIEW ALL ON GITHUB</span>
-              </a>
-            )}
           </div>
         </div>
 
@@ -189,6 +177,81 @@ export function Projects() {
               </motion.article>
             ))}
           </div>
+        )}
+
+        {/* More projects on GitHub Telemetry Block */}
+        {featuredProjects.length > 0 && (
+          <motion.div
+            {...getFadeInUpProps(isReducedMotion)}
+            className="mt-12 border border-border-custom bg-surface p-6 rounded-md flex flex-col md:flex-row items-center justify-between gap-8 hover:border-accent/40 transition-colors"
+          >
+            <div className="space-y-3 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start space-x-2 text-accent">
+                <Github size={16} />
+                <span className="font-mono text-2xs uppercase tracking-wider">GitHub Activity</span>
+              </div>
+              <h3 className="font-display text-lg font-bold text-text-primary">
+                More projects on GitHub
+              </h3>
+              <p className="text-xs text-text-secondary max-w-md leading-relaxed">
+                Explore a wider range of machine learning pipelines, script utilities, and collaborative models directly in my repositories.
+              </p>
+            </div>
+
+            {/* Visual Grid Mockup */}
+            <div className="hidden lg:flex flex-col gap-1 select-none">
+              <div className="flex gap-1">
+                {Array.from({ length: 24 }).map((_, colIndex) => (
+                  <div key={colIndex} className="flex flex-col gap-1">
+                    {Array.from({ length: 7 }).map((_, rowIndex) => {
+                      const opacities = [
+                        'bg-background border border-border-custom/50',
+                        'bg-accent/10',
+                        'bg-accent/30',
+                        'bg-accent/60',
+                        'bg-accent'
+                      ];
+                      // Generate organic looking contribution density
+                      const seed = (colIndex * 3 + rowIndex * 7) % 5;
+                      const opacityClass = opacities[seed];
+                      return (
+                        <div
+                          key={rowIndex}
+                          className={`w-2.5 h-2.5 rounded-sm ${opacityClass}`}
+                        />
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between items-center font-mono text-[8px] text-text-secondary uppercase tracking-widest mt-1.5">
+                <span>Less</span>
+                <div className="flex gap-1">
+                  <div className="w-2 h-2 rounded-sm bg-background border border-border-custom/50" />
+                  <div className="w-2 h-2 rounded-sm bg-accent/10" />
+                  <div className="w-2 h-2 rounded-sm bg-accent/30" />
+                  <div className="w-2 h-2 rounded-sm bg-accent/60" />
+                  <div className="w-2 h-2 rounded-sm bg-accent" />
+                </div>
+                <span>More</span>
+              </div>
+            </div>
+
+            <a
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto"
+            >
+              <button
+                type="button"
+                className="w-full md:w-auto border border-border-custom bg-surface text-text-primary hover:border-accent hover:text-accent px-5 py-3 text-xs font-mono font-medium rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent transition-all cursor-pointer flex items-center justify-center space-x-2"
+              >
+                <Github size={14} />
+                <span>EXPLORE_GITHUB_PROFILE</span>
+              </button>
+            </a>
+          </motion.div>
         )}
       </div>
     </section>
