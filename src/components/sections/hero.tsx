@@ -122,7 +122,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative min-h-[calc(100vh-68px)] flex flex-col justify-center py-16 md:py-24"
+      className="relative flex flex-col justify-start pt-6 pb-16 md:pt-10 md:pb-24"
       aria-labelledby="hero-title"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">

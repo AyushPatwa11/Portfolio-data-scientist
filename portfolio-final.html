@@ -86,7 +86,7 @@ nav.scrolled{background:rgba(8,12,30,.92);border-color:var(--border)}
 .mob-nav a:hover{color:var(--text)}
 
 /* ═══ HERO ════════════════ */
-#hero{min-height:100vh;display:flex;align-items:center;padding-top:calc(var(--nav-h) + 2rem);padding-bottom:5rem;overflow:hidden}
+#hero{min-height:auto;padding-top:calc(var(--nav-h) + 1.25rem);padding-bottom:4rem;overflow:hidden}
 .hero-bg-grad{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(99,102,241,.13) 0%,transparent 65%)}
 .grid-bg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px}
 [data-theme="light"] .grid-bg{background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px)}
@@ -442,10 +442,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem cla
     </ul>
     <div class="nav-r">
       <button class="tog" onclick="toggleTheme()" aria-label="Toggle theme"><div class="tog-t"></div></button>
-      <a class="btn btn-p nav-cta-desk" style="padding:.45rem 1rem;font-size:.8rem" onclick="dlResume(event)" href="#">
+      <!-- <a class="btn btn-p nav-cta-desk" style="padding:.45rem 1rem;font-size:.8rem" onclick="dlResume(event)" href="#">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Resume
-      </a>
+      </a> -->
       <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Menu">
         <span id="hs1"></span><span id="hs2"></span><span id="hs3"></span>
       </button>
@@ -461,10 +461,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem cla
   <a href="#articles" onclick="mnavClick(event,'#articles')">Articles</a>
   <a href="#education" onclick="mnavClick(event,'#education')">Education</a>
   <a href="#contact" onclick="mnavClick(event,'#contact')">Contact</a>
-  <a class="btn btn-p" style="margin-top:.75rem;justify-content:center" onclick="dlResume(event)" href="#">
+  <!-- <a class="btn btn-p" style="margin-top:.75rem;justify-content:center" onclick="dlResume(event)" href="#">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     Download Resume
-  </a>
+  </a> -->
 </div>
 
 <!-- HERO -->
