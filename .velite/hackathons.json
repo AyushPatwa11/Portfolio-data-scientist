@@ -6,5 +6,19 @@
     "result": "Placement or Award (e.g. Top 10 Finalist)",
     "devpostUrl": "https://devpost.com/software/project-slug",
     "impact": "Brief description of the project and its core impact metrics."
+  },
+  {
+    "title": "HackSprint 2026",
+    "role": "Lead AI / ML Developer",
+    "projectBuilt": "AI-Powered Agricultural Intelligence System",
+    "result": "Runner-up (2nd Place & 3,000 Cash Prize)",
+    "impact": "Won 2nd place and a cash prize of 3,000 for developing an innovative AI-based solution."
+  },
+  {
+    "title": "Smart India Hackathon (SIH), HackIndia & HackBio",
+    "role": "Full-Stack & AI Collaborator",
+    "projectBuilt": "Cybersecurity & AI Engineering Prototypes",
+    "result": "National Participant",
+    "impact": "Collaborated on multi-disciplinary AI, cybersecurity, and software engineering projects across national hackathons."
   }
 ]

@@ -1,8 +1,8 @@
 [
   {
     "year": "2024",
-    "title": "B.Tech CSE Enrollment",
-    "description": "Began Computer Science Engineering studies. Focused on software foundations, logic design, and mathematics.",
+    "title": "B.Tech CSE at Rungta College, Bhilai",
+    "description": "Began B.Tech in Computer Science at Rungta College of Engineering and Technology, Bhilai. Maintaining CGPA: 7.50/10.",
     "category": "Academic",
     "order": 1
   },
@@ -26,6 +26,13 @@
     "description": "Focus on building model pipelines. Implementing statistical learning methods and model validations (Scikit-Learn, PyTorch basics).",
     "category": "AI/ML",
     "order": 4
+  },
+  {
+    "year": "2026",
+    "title": "Runner-up at HackSprint 2026",
+    "description": "Won 2nd place and a cash prize of 3,000 for developing an innovative AI-based solution.",
+    "category": "Achievement",
+    "order": 5
   },
   {
     "year": "2026",

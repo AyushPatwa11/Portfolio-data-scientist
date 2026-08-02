@@ -1,5 +1,61 @@
 [
   {
+    "slug": "kisanbuddy",
+    "title": "KisanBuddy – AI-Powered Agricultural Assistant",
+    "description": "Multilingual AI PWA for farmers providing crop disease diagnosis, weather hazard alerts, and real-time market price intelligence.",
+    "featured": true,
+    "status": "completed",
+    "category": "Artificial Intelligence",
+    "difficulty": "Advanced",
+    "techStack": [
+      "Next.js",
+      "FastAPI",
+      "Gemini API",
+      "Vertex AI",
+      "Firebase"
+    ],
+    "github": "https://github.com/AyushPatwa11/KisanBuddy",
+    "demo": "https://kisanbuddy.demo",
+    "publishedAt": "2026-08-01",
+    "updatedAt": "2026-08-02",
+    "order": 1,
+    "caseStudy": {
+      "problem": "Low-connectivity agricultural regions lack accessible real-time crop disease diagnosis, local market pricing intelligence, and severe weather alert mechanisms.",
+      "solution": "Engineered a multilingual PWA leveraging an agentic Planner-Executor-Validator architecture powered by Vertex AI, SWIN Transformer, and LSTM forecasting.",
+      "challenges": "Ensuring reliable offline functionality in rural areas with spotty connectivity and managing multi-modal data streams for real-time disease detection.",
+      "learnings": "Mastered offline-first web design with IndexedDB AES-256 encryption, background sync workers, and agentic orchestration.",
+      "futureImprovements": "Integrate drone imagery data streams and expanded regional language voice synthesis."
+    },
+    "content": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const t={h3:\"h3\",li:\"li\",ol:\"ol\",p:\"p\",strong:\"strong\",ul:\"ul\",...i.components};return r(e,{children:[n(t.h3,{children:\"System Overview\"}),\"\\n\",r(t.p,{children:[n(t.strong,{children:\"KisanBuddy\"}),\" is an end-to-end AI-powered Progressive Web App (PWA) designed to empower farmers with real-time decision intelligence:\"]}),\"\\n\",r(t.ul,{children:[\"\\n\",r(t.li,{children:[n(t.strong,{children:\"Crop Disease Diagnosis\"}),\": Multilingual image analysis for instant detection of plant pathologies.\"]}),\"\\n\",r(t.li,{children:[n(t.strong,{children:\"Weather Hazard Alerts\"}),\": Predictive risk warnings powered by Earth Engine and LSTM forecasting.\"]}),\"\\n\",r(t.li,{children:[n(t.strong,{children:\"Market Price Intelligence\"}),\": Live commodity pricing analytics and trends.\"]}),\"\\n\"]}),\"\\n\",n(t.h3,{children:\"Key Architecture Highlights\"}),\"\\n\",r(t.ol,{children:[\"\\n\",r(t.li,{children:[n(t.strong,{children:\"Agentic Planner–Executor–Validator\"}),\": Integrates Vertex AI, SWIN Transformers, and Earth Engine services to validate advice before presenting to farmers.\"]}),\"\\n\",r(t.li,{children:[n(t.strong,{children:\"Offline-First PWA\"}),\": Uses IndexedDB with AES-256 encryption and background synchronization for seamless usage in low-connectivity areas.\"]}),\"\\n\"]})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};"
+  },
+  {
+    "slug": "phishguard-ai",
+    "title": "PhishGuard AI – Intelligent Phishing Detection System",
+    "description": "Explainable AI-powered phishing detection platform identifying malicious URLs and emails with threat visualization and XAI predictions.",
+    "featured": true,
+    "status": "completed",
+    "category": "Machine Learning & Security",
+    "difficulty": "Intermediate",
+    "techStack": [
+      "Python",
+      "Flask",
+      "Scikit-learn"
+    ],
+    "github": "https://github.com/AyushPatwa11/PhishGuard-AI",
+    "demo": "https://phishguard.demo",
+    "publishedAt": "2026-06-15",
+    "updatedAt": "2026-07-25",
+    "order": 4,
+    "caseStudy": {
+      "problem": "Traditional phishing filters lack explainability, leaving users unaware of why specific emails or links were flagged as threats.",
+      "solution": "Built an Explainable AI (XAI) phishing detector providing feature attribution, IP geolocation, and threat visualization dashboards.",
+      "challenges": "Balancing model accuracy with real-time prediction speeds for interactive REST API evaluation.",
+      "learnings": "Implemented SHAP/LIME explainability techniques with Scikit-learn classification models and Flask backend APIs.",
+      "futureImprovements": "Deploy browser extension for real-time URL inspection."
+    },
+    "content": "const{Fragment:n,jsx:e,jsxs:i}=arguments[0];function _createMdxContent(t){const r={h3:\"h3\",li:\"li\",p:\"p\",strong:\"strong\",ul:\"ul\",...t.components};return i(n,{children:[e(r.h3,{children:\"System Overview\"}),\"\\n\",i(r.p,{children:[e(r.strong,{children:\"PhishGuard AI\"}),\" provides transparent, explainable phishing detection for emails and URLs:\"]}),\"\\n\",i(r.ul,{children:[\"\\n\",i(r.li,{children:[e(r.strong,{children:\"Explainable Predictions (XAI)\"}),\": Visual explanations of model decisions for security awareness.\"]}),\"\\n\",i(r.li,{children:[e(r.strong,{children:\"Threat Intelligence\"}),\": IP geolocation, domain reputation analysis, and threat visualization.\"]}),\"\\n\",i(r.li,{children:[e(r.strong,{children:\"REST API & Dashboard\"}),\": Interactive interface for instant phishing risk evaluation.\"]}),\"\\n\"]})]})}return{default:function(n={}){const{wrapper:i}=n.components||{};return i?e(i,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};"
+  },
+  {
     "slug": "project-template",
     "title": "Project Title",
     "description": "A concise 1-2 sentence description of the project and its core impact/purpose.",
@@ -25,5 +81,61 @@
       "futureImprovements": "List next steps or scaling paths. What features, models, or infrastructure changes would you make in the next iteration?"
     },
     "content": "const{jsx:t}=arguments[0];function _createMdxContent(n){const e={p:\"p\",...n.components};return t(e.p,{children:\"This is the content body of the project case study, written in MDX format.\"})}return{default:function(n={}){const{wrapper:e}=n.components||{};return e?t(e,{...n,children:t(_createMdxContent,{...n})}):_createMdxContent(n)}};"
+  },
+  {
+    "slug": "scantinel",
+    "title": "Scantinel – Automated Web Vulnerability Scanner",
+    "description": "Full-stack web vulnerability scanner performing 10 automated security assessment phases with real-time SSE progress and AI recommendations.",
+    "featured": true,
+    "status": "completed",
+    "category": "Cybersecurity & Web Security",
+    "difficulty": "Advanced",
+    "techStack": [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB"
+    ],
+    "github": "https://github.com/AyushPatwa11/Scantinel",
+    "demo": "https://scantinel.demo",
+    "publishedAt": "2026-07-20",
+    "updatedAt": "2026-08-01",
+    "order": 2,
+    "caseStudy": {
+      "problem": "Automated vulnerability scanning for web applications often lacks real-time visibility, unified report exports, and actionable AI-assisted remediation.",
+      "solution": "Built a 10-phase automated security scanner with risk grading, real-time SSE updates, and automated PDF/CSV report generation.",
+      "challenges": "Orchestrating concurrent non-blocking scan modules (SSL validation, header audits, port scans, exposed resources) safely.",
+      "learnings": "Deepened expertise in Server-Sent Events (SSE), web security assessment protocols, and interactive dashboard state management.",
+      "futureImprovements": "Add automated SAST/DAST pipeline integration for CI/CD runners."
+    },
+    "content": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(t){const i={h3:\"h3\",li:\"li\",p:\"p\",strong:\"strong\",ul:\"ul\",...t.components};return r(e,{children:[n(i.h3,{children:\"System Overview\"}),\"\\n\",r(i.p,{children:[n(i.strong,{children:\"Scantinel\"}),\" is a comprehensive web vulnerability assessment platform built for developers and security auditors:\"]}),\"\\n\",r(i.ul,{children:[\"\\n\",r(i.li,{children:[n(i.strong,{children:\"10 Assessment Phases\"}),\": Header analysis, SSL validation, port scanning, exposed resource detection, and OWASP Top 10 checks.\"]}),\"\\n\",r(i.li,{children:[n(i.strong,{children:\"Real-Time SSE Streaming\"}),\": Live progress feedback during active security scans.\"]}),\"\\n\",r(i.li,{children:[n(i.strong,{children:\"AI Remediation\"}),\": Automated risk grading, AI security recommendations, and exportable PDF/CSV audit reports.\"]}),\"\\n\"]})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};"
+  },
+  {
+    "slug": "verigraph-ai",
+    "title": "VeriGraph AI – Propaganda & Claim Verification Platform",
+    "description": "AI misinformation analysis platform tracking claim propagation across News RSS, Facebook, Telegram, GDELT, and CommonCrawl.",
+    "featured": true,
+    "status": "completed",
+    "category": "Machine Learning & NLP",
+    "difficulty": "Advanced",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "Transformers"
+    ],
+    "github": "https://github.com/AyushPatwa11/VeriGraph-AI",
+    "demo": "https://verigraph.demo",
+    "publishedAt": "2026-07-10",
+    "updatedAt": "2026-08-01",
+    "order": 3,
+    "caseStudy": {
+      "problem": "Tracking viral misinformation across multi-platform news and social feeds requires low-latency collection, virality scoring, and claim verification.",
+      "solution": "Developed an AI platform tracking claim propagation across GDELT, CommonCrawl, RSS, and social channels with confidence-based claim verification.",
+      "challenges": "Handling high-throughput parallel data pipelines and graph network analytics in real-time.",
+      "learnings": "Advanced NLP transformer modeling, virality scoring metrics, and asynchronous microservice architecture in FastAPI.",
+      "futureImprovements": "Integrate deepfake audio/video verification sub-modules."
+    },
+    "content": "const{Fragment:n,jsx:e,jsxs:r}=arguments[0];function _createMdxContent(i){const t={h3:\"h3\",li:\"li\",p:\"p\",strong:\"strong\",ul:\"ul\",...i.components};return r(n,{children:[e(t.h3,{children:\"System Overview\"}),\"\\n\",r(t.p,{children:[e(t.strong,{children:\"VeriGraph AI\"}),\" tracks and verifies news claims and online propaganda across diverse global information channels:\"]}),\"\\n\",r(t.ul,{children:[\"\\n\",r(t.li,{children:[e(t.strong,{children:\"Multi-Source Collection\"}),\": Ingests data from News RSS, Facebook, Telegram, GDELT, and CommonCrawl.\"]}),\"\\n\",r(t.li,{children:[e(t.strong,{children:\"Propagation Analytics\"}),\": Real-time virality scoring, threat assessment, and amplification network tracking.\"]}),\"\\n\",r(t.li,{children:[e(t.strong,{children:\"Verification Engine\"}),\": Confidence-based claim verification powered by transformer models.\"]}),\"\\n\"]})]})}return{default:function(n={}){const{wrapper:r}=n.components||{};return r?e(r,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};"
   }
 ]

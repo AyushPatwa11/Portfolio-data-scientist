@@ -4,5 +4,10 @@
     "issuer": "Issuing Organization (e.g. Coursera, DeepLearning.AI)",
     "issueDate": "Month Year (e.g. July 2026)",
     "verifyUrl": "https://credentials-verification-link.org"
+  },
+  {
+    "title": "Artificial Intelligence and Machine Learning",
+    "issuer": "Coding Spoon",
+    "issueDate": "2026"
   }
 ]

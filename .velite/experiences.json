@@ -35,5 +35,24 @@
       "GitHub"
     ],
     "isClubLeadership": true
+  },
+  {
+    "company": "YouTube",
+    "role": "Technical Content Creator",
+    "startDate": "2024",
+    "endDate": "Present",
+    "location": "Remote",
+    "bullets": [
+      "Created technical programming content on YouTube sharing software development, AI/ML, and technology concepts.",
+      "Produced practical tutorials on web security, full-stack frameworks, and algorithm design.",
+      "Engaged with a community of learners to foster software engineering and data science interest."
+    ],
+    "skillsUsed": [
+      "Python",
+      "JavaScript",
+      "Full-Stack Development",
+      "AI/ML Concepts"
+    ],
+    "isClubLeadership": false
   }
 ]

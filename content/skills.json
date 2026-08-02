@@ -1,82 +1,98 @@
 [
   {
     "name": "Python",
-    "category": "Programming Languages",
-    "years": "2 Years",
-    "description": "Primary language for data pipelines, scripting, and statistical modeling.",
+    "category": "Languages",
+    "years": "2+ Years",
+    "description": "Primary language for AI/ML pipelines, FastAPI/Flask services, and algorithmic modeling.",
     "displayOrder": 1,
     "visible": true
   },
   {
-    "name": "SQL",
-    "category": "Programming Languages",
-    "years": "1 Year",
-    "description": "Optimizing queries, indexing, and structuring relational schemas.",
+    "name": "Java",
+    "category": "Languages",
+    "years": "2+ Years",
+    "description": "Object-oriented programming, data structures, and foundational software engineering.",
     "displayOrder": 2,
     "visible": true
   },
   {
-    "name": "Java",
-    "category": "Programming Languages",
-    "years": "3 Years",
-    "description": "Mastery of object-oriented design and classical DSA structures.",
+    "name": "JavaScript",
+    "category": "Languages",
+    "years": "2+ Years",
+    "description": "Full-stack web application logic, Node.js servers, and client-side interactivity.",
     "displayOrder": 3,
     "visible": true
   },
   {
-    "name": "JavaScript",
-    "category": "Programming Languages",
-    "years": "2 Years",
-    "description": "Scripting language utilized for asynchronous Node web servers.",
+    "name": "SQL",
+    "category": "Languages",
+    "years": "1+ Year",
+    "description": "Relational database queries, schema structuring, and indexing optimization.",
     "displayOrder": 4,
     "visible": true
   },
   {
-    "name": "Scikit-Learn",
-    "category": "Data Science & AI",
-    "years": "1 Year",
-    "description": "Implementing regressions, clustering classifiers, and model tuning.",
+    "name": "React.js & Next.js",
+    "category": "Frameworks & Libraries",
+    "years": "2+ Years",
+    "description": "Building modern full-stack web applications, progressive web apps, and dynamic UIs.",
     "displayOrder": 5,
     "visible": true
   },
   {
-    "name": "Pandas & NumPy",
-    "category": "Data Science & AI",
-    "years": "2 Years",
-    "description": "Data wrangling, cleaning operations, and vector matrix math.",
+    "name": "FastAPI & Express.js",
+    "category": "Frameworks & Libraries",
+    "years": "2+ Years",
+    "description": "Designing high-performance backend REST APIs and microservice architecture.",
     "displayOrder": 6,
     "visible": true
   },
   {
-    "name": "PyTorch",
-    "category": "Data Science & AI",
-    "years": "1 Year",
-    "description": "Studying neural networks, loss calculations, and training loops.",
+    "name": "ML & Transformers",
+    "category": "AI / Data Science",
+    "years": "2+ Years",
+    "description": "Scikit-learn, HuggingFace Transformers, SWIN Transformers, and NLP claim verification.",
     "displayOrder": 7,
     "visible": true
   },
   {
-    "name": "React",
-    "category": "Frontend",
-    "years": "2 Years",
-    "description": "Building interactive browser UIs and layout components.",
+    "name": "Computer Vision & OpenCV",
+    "category": "AI / Data Science",
+    "years": "1+ Year",
+    "description": "Image processing, object recognition, and visual deep learning pipelines.",
     "displayOrder": 8,
     "visible": true
   },
   {
-    "name": "Node.js & Express",
-    "category": "Backend",
-    "years": "2 Years",
-    "description": "Developing REST APIs and backend controller endpoints.",
+    "name": "Pandas & NumPy",
+    "category": "AI / Data Science",
+    "years": "2+ Years",
+    "description": "Data wrangling, matrix manipulation, feature engineering, and analytics.",
     "displayOrder": 9,
     "visible": true
   },
   {
-    "name": "Git & GitHub",
-    "category": "Tools & Platforms",
-    "years": "3 Years",
-    "description": "Version control, branching workflows, and documentation reviews.",
+    "name": "MongoDB & Firebase",
+    "category": "Databases",
+    "years": "2+ Years",
+    "description": "NoSQL document storage, real-time database syncing, and authentication services.",
     "displayOrder": 10,
+    "visible": true
+  },
+  {
+    "name": "Git & Docker",
+    "category": "Developer Tools",
+    "years": "2+ Years",
+    "description": "Version control, containerized deployments, Postman API testing, and VS Code workflows.",
+    "displayOrder": 11,
+    "visible": true
+  },
+  {
+    "name": "Data Structures & REST APIs",
+    "category": "Concepts",
+    "years": "2+ Years",
+    "description": "Algorithmic problem solving, RESTful system design, OOP principles, and Web Security.",
+    "displayOrder": 12,
     "visible": true
   }
 ]
