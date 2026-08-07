@@ -102,7 +102,7 @@ export function About() {
               </div>
 
               <div className="text-[9px] font-mono text-text-secondary uppercase tracking-widest">
-                Current: 6th Semester student
+                Current: 5th Semester student
               </div>
             </motion.div>
 
