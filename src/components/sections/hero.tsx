@@ -41,7 +41,7 @@ export function Hero() {
           y="35"
           className="font-mono text-[9px] fill-text-secondary tracking-widest uppercase"
         >
-          LOC: 19.076° N, 72.877° E
+          LOC: 21.235° N, 81.346° E
         </text>
         <text
           x="30"
