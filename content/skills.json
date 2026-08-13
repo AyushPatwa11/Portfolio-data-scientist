@@ -3,7 +3,7 @@
     "name": "Python",
     "category": "Languages",
     "years": "2+ Years",
-    "description": "Primary language for AI/ML pipelines, FastAPI/Flask services, and algorithmic modeling.",
+    "description": "Primary language for AI/ML pipelines, FastAPI services, and algorithmic modeling.",
     "displayOrder": 1,
     "visible": true
   },
