@@ -1,9 +1,9 @@
 [
   {
     "year": "2024",
-    "title": "B.Tech CSE at Rungta College, Bhilai",
-    "description": "Began B.Tech in Computer Science at Rungta College of Engineering and Technology, Bhilai. Maintaining CGPA: 7.50/10.",
-    "category": "Academic",
+    "title": "B.Tech in Computer Science and Engineering",
+    "description": "Began B.Tech in CSE at Rungta College of Engineering and Technology, Bhilai.",
+    "category": "Achievement",
     "order": 1
   },
   {
@@ -29,8 +29,8 @@
   },
   {
     "year": "2026",
-    "title": "Runner-up at HackSprint 2026",
-    "description": "Won 2nd place and a cash prize of 3,000 for developing an innovative AI-based solution.",
+    "title": "HackSprint 2026",
+    "description": "Secured 2nd position with cash prize of ₹3000 for creating an innovative AI-driven solution.",
     "category": "Achievement",
     "order": 5
   },
@@ -38,7 +38,7 @@
     "year": "2026",
     "title": "Milestone Title",
     "description": "Short explanation of the achievement, study course, or leadership transition.",
-    "category": "Academic",
+    "category": "Achievement",
     "order": 1
   }
 ]
