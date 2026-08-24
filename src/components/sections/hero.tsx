@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import { ArrowRight, FileText, Mail, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
@@ -9,7 +10,7 @@ import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 /**
  * Premium Hero Section Component.
- * Implements desktop split-screen layout (text left, interactive SVG right).
+ * Implements desktop split-screen layout (text left, portrait photo right).
  * Built with strict design tokens, Framer Motion sequence animations,
  * and accessibility keyboard navigation aids.
  */
@@ -18,107 +19,6 @@ export function Hero() {
 
   // Sequence delays
   const delayStep = isReducedMotion ? 0 : 0.1;
-
-  // Render responsive interactive data nodes representing neural network configurations
-  const renderSVGNodes = () => {
-    return (
-      <svg
-        className="w-full h-full max-w-[480px] max-h-[480px] mx-auto text-border-custom"
-        viewBox="0 0 400 400"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        {/* Bounding target brackets */}
-        <path d="M 20 50 L 20 20 L 50 20" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M 380 50 L 380 20 L 350 20" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M 20 350 L 20 380 L 50 380" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M 380 350 L 380 380 L 350 380" stroke="currentColor" strokeWidth="1.5" />
-
-        {/* Technical annotation text */}
-        <text
-          x="30"
-          y="35"
-          className="font-mono text-[9px] fill-text-secondary tracking-widest uppercase"
-        >
-          LOC: 21.235° N, 81.346° E
-        </text>
-        <text
-          x="30"
-          y="370"
-          className="font-mono text-[9px] fill-text-secondary tracking-widest uppercase"
-        >
-          SYS: V1.0_READY
-        </text>
-
-        {/* Grid dots background */}
-        <defs>
-          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1" className="fill-border-custom" />
-          </pattern>
-        </defs>
-        <rect width="400" height="400" fill="url(#grid)" />
-
-        {/* Network connections */}
-        <motion.path
-          d="M 100 200 L 200 100 M 100 200 L 200 200 M 100 200 L 200 300 M 200 100 L 300 200 M 200 200 L 300 200 M 200 300 L 300 200"
-          stroke="currentColor"
-          strokeWidth="1.2"
-          strokeDasharray="4 4"
-          initial={isReducedMotion ? { strokeDashoffset: 0 } : { strokeDashoffset: 24 }}
-          animate={isReducedMotion ? {} : { strokeDashoffset: 0 }}
-          transition={{ repeat: Infinity, ease: 'linear', duration: 4 }}
-        />
-
-        {/* Primary Data nodes */}
-        <motion.circle
-          cx="100"
-          cy="200"
-          r="6"
-          className="fill-background stroke-text-primary"
-          strokeWidth="1.5"
-          whileHover={isReducedMotion ? {} : { scale: 1.3, fill: 'var(--accent)' }}
-        />
-        <motion.circle
-          cx="200"
-          cy="100"
-          r="6"
-          className="fill-background stroke-text-primary"
-          strokeWidth="1.5"
-          whileHover={isReducedMotion ? {} : { scale: 1.3, fill: 'var(--accent)' }}
-        />
-        <motion.circle
-          cx="200"
-          cy="200"
-          r="6"
-          className="fill-background stroke-text-primary"
-          strokeWidth="1.5"
-          whileHover={isReducedMotion ? {} : { scale: 1.3, fill: 'var(--accent)' }}
-        />
-        <motion.circle
-          cx="200"
-          cy="300"
-          r="6"
-          className="fill-background stroke-text-primary"
-          strokeWidth="1.5"
-          whileHover={isReducedMotion ? {} : { scale: 1.3, fill: 'var(--accent)' }}
-        />
-        <motion.circle
-          cx="300"
-          cy="200"
-          r="6"
-          className="fill-background stroke-text-primary"
-          strokeWidth="1.5"
-          whileHover={isReducedMotion ? {} : { scale: 1.3, fill: 'var(--accent)' }}
-        />
-
-        {/* Floating coordinates overlay */}
-        <g className="fill-accent">
-          <circle cx="200" cy="200" r="2" />
-        </g>
-      </svg>
-    );
-  };
 
   return (
     <section
@@ -133,11 +33,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitionEase, delay: 0 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-3"
           >
             <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
             <span className="font-mono text-2xs uppercase tracking-wider text-text-secondary">
               {siteConfig.status.label}
+            </span>
+            <span className="hidden sm:block w-px h-3 bg-border-custom" aria-hidden="true" />
+            <span className="hidden sm:flex items-center gap-1 font-mono text-2xs uppercase tracking-wider text-text-secondary/60">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="3" stroke="currentColor" strokeWidth="1" /><circle cx="4" cy="4" r="1" fill="currentColor" /></svg>
+              21.235° N, 81.346° E
             </span>
           </motion.div>
 
@@ -209,14 +114,37 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Column: Premium SVG network graph */}
+        {/* Right Column: Portrait Photo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.96, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ ...transitionSpring, delay: delayStep * 4 }}
-          className="md:col-span-5 flex items-center justify-center w-full aspect-square border border-border-custom bg-surface/40 backdrop-blur-md rounded-md p-6 relative overflow-hidden"
+          className="md:col-span-5 flex items-end justify-center w-full relative"
+          style={{ minHeight: '420px' }}
         >
-          {renderSVGNodes()}
+          {/* Ambient glow backdrop — visible in dark mode only */}
+          <div
+            className="absolute inset-x-0 bottom-0 top-[15%] rounded-full opacity-0 dark:opacity-20 blur-3xl pointer-events-none transition-opacity"
+            style={{
+              background:
+                'radial-gradient(ellipse at 50% 80%, hsl(224, 90%, 56%) 0%, transparent 70%)',
+            }}
+            aria-hidden="true"
+          />
+
+
+
+          {/* Portrait image — transparent background, bottom fade baked in */}
+          <div className="relative w-full h-full flex items-end justify-center">
+            <Image
+              src="/images/avatar.png"
+              alt="Portrait of Ayush Patwa"
+              width={560}
+              height={610}
+              priority
+              className="object-contain object-bottom w-full max-w-[480px] select-none"
+            />
+          </div>
         </motion.div>
       </div>
 

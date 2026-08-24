@@ -90,7 +90,7 @@ textarea {
     border-color 0.15s ease;
 }
 
-/* Accessibility - Reduced Motion rules overrides */
+/* Reduced Motion rules */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-delay: 0s !important;
@@ -100,3 +100,5 @@ textarea {
     scroll-behavior: auto !important;
   }
 }
+
+
